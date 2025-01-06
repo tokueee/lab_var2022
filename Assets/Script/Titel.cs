@@ -11,6 +11,8 @@ public class Titel : MonoBehaviour
     [SerializeField] private Text menu_closes;
     [SerializeField] private GameObject button;
     [SerializeField] private GameObject C_button;
+    [SerializeField] private GameObject exitbutton;
+    [SerializeField] private Text exits;
 
     private float dtimes;
     private float stimers;
@@ -18,6 +20,7 @@ public class Titel : MonoBehaviour
     private bool deley;
 
     private string menuclosetexts;
+    private string exittext;
 
     void Menu_closes()
     {
@@ -25,10 +28,17 @@ public class Titel : MonoBehaviour
         menu_closes.text = menuclosetexts;
         menu_closes.fontSize = 45;
     }
+
+    void exitT()
+    {
+        exittext = "End";
+        exits.text = exittext;
+    }
     // Start is called before the first frame update
     void Start()
     {
         Menu_closes();
+        exitT();
         UnityEngine.Cursor.visible = true;
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         //cntrol + P‚ÅƒvƒŒƒC
@@ -41,7 +51,17 @@ public class Titel : MonoBehaviour
         {
             canvaspanel.SetActive(true);
             button.SetActive(false);
+            exitbutton.SetActive(false);
         }
+    }
+
+    public void Onclicks()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 
     public void Close_click()

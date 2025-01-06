@@ -73,7 +73,7 @@ public class Player_Light : MonoBehaviour
                     //main
                     if (0 >= timer[0] - (time_Elapsed[0] + Time.time - checktime[0]))
                     {
-                        Lv_Lm -= 0.5f;
+                        Lv_Lm -= 30f;
                         time_Elapsed[0] = 0;
                         down_F = false;
                         //Lightbar.value = Lightbar.value - 0.15f;
@@ -147,7 +147,7 @@ public class Player_Light : MonoBehaviour
     
     public void ChargeLight()
     {
-        this.Lv_Lm = 3.5f;
+        this.Lv_Lm = 200f;
         this.Lv_Ls[0] = 50;
         this.Lv_Ls[1] = 25;
         this.reset_light = true;

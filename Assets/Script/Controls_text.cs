@@ -92,5 +92,14 @@ public class Controls_text : MonoBehaviour
             panel.SetActive(false);
             otext.SetActive(true);
         }
+
+        /*if (Input.GetKeyDown(KeyCode.Space))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }*/
     }
 }
