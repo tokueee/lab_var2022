@@ -14,6 +14,9 @@ public class Titel : MonoBehaviour
     [SerializeField] private Text backt;
     [SerializeField] private Text starttext;
     [SerializeField] private Text languagetext;
+    [SerializeField] private Text langbackt;
+    [SerializeField] private Text langtext_jp;
+    [SerializeField] private Text langtext_en;
     [SerializeField] private GameObject[] button;
     /*
     [SerializeField] private GameObject button;
@@ -31,73 +34,146 @@ public class Titel : MonoBehaviour
     private string backbuttontext;
     private string startbuttontext;
     private string langagebuttontext;
+    private string langjtext;
+    private string langtexts_en;
 
-    public enum language
+    Controls_text controls_;
+    public enum Language
     {
         Eng,
         Jpn
     }
+    public Language language;
     void Menu_closes()
     {
-        menuclosetexts = "MenuClose";
+        if (language == Language.Eng)
+        {
+            menuclosetexts = "MenuClose and Start";
+        }
+        else
+        {
+            menuclosetexts = "閉じて始める";
+        }
         menu_closes.text = menuclosetexts;
         menu_closes.fontSize = 45;
     }
 
     void exitT()
     {
-        exittext = "End";
+        if(language == Language.Eng)
+        {
+            exittext = "End";
+        }
+        else
+        {
+            exittext = "終了";
+        }
         exits.text = exittext;
     }
 
     void backText()
     {
-        backbuttontext = "Back";
+        if (language == Language.Eng)
+        {
+            backbuttontext = "Back";
+        }
+        else
+        {
+            backbuttontext = "戻る";
+        }
         backt.text = backbuttontext;
         backt.fontSize = 27;
     }
 
     void Start_T()
     {
-        startbuttontext = "START";
+        if (language == Language.Eng)
+        {
+            startbuttontext = "START";
+        }
+        else
+        {
+            startbuttontext = "始める";
+        }
         starttext.text = startbuttontext;
     }
 
     void langT()
     {
-        langagebuttontext = "Language";
+        if (language == Language.Eng)
+        {
+            langagebuttontext = "Language";
+        }
+        else
+        {
+            langagebuttontext = "言語";
+        }
         languagetext.text = langagebuttontext;
     }
-    void TextSet()
+
+    void langbT()
+    {
+        langbackt.text = backbuttontext;
+        langbackt.fontSize = 21;
+    }
+    void Langchange()
+    {
+        switch (language)
+        {
+            case Language.Eng:
+                langjtext = "Japanese";
+                langtexts_en = "English";
+                TitleTextSet();
+                break;
+            case Language.Jpn:
+                langjtext = "日本語";
+                langtexts_en = "英語";
+                TitleTextSet();
+                break;
+        }
+        langtext_jp.text = langjtext;
+        langtext_en.text = langtexts_en;
+    }
+    void TitleTextSet()
     {
         Menu_closes();
         exitT();
         backText();
         Start_T();
         langT();
+        langbT();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        TextSet();
+        Langchange();
+        TitleTextSet();
         UnityEngine.Cursor.visible = true;
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         //cntrol + Pでプレイ
         controlspanel.SetActive(false);
         languagepanel.SetActive(false);
+        controls_ = GetComponent<Controls_text>();
         Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
     }
 
-    /*public void Click()
+    public void JpnClick()
     {
-        if (canvaspanel.activeSelf == false)
+        if(language == Language.Eng)
         {
-            canvaspanel.SetActive(true);
-            button.SetActive(false);
-            exitbutton.SetActive(false);
+            language = Language.Jpn;
         }
-    }*/
+        Langchange();
+    }
+    public void EngClick()
+    {
+        if (language == Language.Jpn)
+        {
+            language = Language.Eng;
+        }
+        Langchange();
+    }
 
     public void Onclicks()
     {
@@ -110,65 +186,22 @@ public class Titel : MonoBehaviour
 
     public void Close_click()
     {
-        if (controlspanel.activeSelf)
-        {
-            deley = true;
-        }
+        deley = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        /*if (Input.GetKeyDown(KeyCode.Space) && canvaspanel.activeSelf == false)
-        {
-            canvaspanel.SetActive(true);
-        }
-        if (canvaspanel.activeSelf)
-        {
-            deley = true;
-            //canvaspanel.SetActive(false);
-        }*/
-
         if (deley)
         {
             dtimes = Time.deltaTime;
-            stimers = stimers + (dtimes % 4.2f);
+            stimers = stimers + (dtimes % 2.2f);
             Debug.Log(stimers);
-            if (stimers > 4)
+            if (stimers > 2)
             {
+                deley = false;
+                SceneManager.LoadScene("LightSampleScene");
                 //deley = false;
-                controlspanel.SetActive(false);
-                button[2].SetActive(false);
-                if (stimers > 5)
-                {
-                    deley = false;
-                    SceneManager.LoadScene("LightSampleScene");
-                }
-                //SceneManager.LoadScene("LightSampleScene");
-                /*if (Input.GetKeyDown(KeyCode.Space) && canvaspanel.activeSelf)
-                {
-                    deley = true;
-                    //canvaspanel.SetActive(false);
-                }
-
-                if (deley)
-                {
-                    times = Time.deltaTime;
-                    stimer = stimer + (times % 4.2f);
-                    Debug.Log(stimer);
-                    if(stimer > 4)
-                    {
-                        //deley = false;
-                        canvaspanel.SetActive(false);
-                        if(stimer > 5)
-                        {
-                            deley = false;
-                            SceneManager.LoadScene("LightSampleScene");
-                        }
-                        //SceneManager.LoadScene("LightSampleScene");
-                    }
-                }*/
             }
         }
     }

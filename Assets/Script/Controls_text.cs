@@ -7,6 +7,7 @@ public class Controls_text : MonoBehaviour
 {
     [SerializeField] private GameObject panel;//パネル操作用
     [SerializeField] private GameObject otext;//文字をつけ消しするための変数
+    [SerializeField] private GameObject gamesystem;
 
     //テキスト取得
     [SerializeField] private Text pcontrol;
@@ -23,10 +24,20 @@ public class Controls_text : MonoBehaviour
     private string mousecontrol;
     private string menutext;
     private string menuclosetext;
+
+    Titel titel;
     // Start is called before the first frame update
 
     void heading()
     {
+        /*if(titel.language == Titel.Language.Eng)
+        {
+            headcontrol = "PLAYER CONTROLS";
+        }
+        else
+        {
+            headcontrol = "操作方法";
+        }*/
         headcontrol = "PLAYER CONTROLS";
         pcontrol.text = headcontrol;
         pcontrol.fontSize = 50;
@@ -34,6 +45,14 @@ public class Controls_text : MonoBehaviour
 
     void Moving()
     {
+        /*if (titel.language == Titel.Language.Eng)
+        {
+            movecontrol = "MOVE\nW Key Front\tA Key Left\nS  key Back \tD Key Right\nMoveKey + SHIFT Dash";
+        }
+        else
+        {
+            movecontrol = "動作\nW Key 前\tA key 左 \nS Key 後ろ \tD key 右\n移動キー + SHIFT ダッシュ";
+        }*/
         movecontrol = "MOVE\nW Key Front\tA Key Left\nS  key Back \tD Key Right\nMoveKey + SHIFT Dash";
         mcontrol.text = movecontrol;
         mcontrol.fontSize = 40;
@@ -62,20 +81,21 @@ public class Controls_text : MonoBehaviour
         menu_close.text = menuclosetext;
         menu_close.fontSize = 45;
     }
-    void TextSet()
+    public void TextSet()
     {
         heading();
         Moving();
         lighting();
         MouseControler();
-        Menu_Opens();
-        Menu_close();
     }
 
     void Start()
     {
         panel.SetActive(false);
         TextSet();//初期設定
+        Menu_close();
+        Menu_Opens();
+        titel = gamesystem.GetComponent<Titel>();
     }
 
     // Update is called once per frame

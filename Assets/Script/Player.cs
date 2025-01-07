@@ -35,7 +35,8 @@ public class Player : MonoBehaviour
 
     public bool pu = false;
     public bool spu = false;
-
+    private Collider Collide;
+    private int platecount = 0;
 
     //ƒ‰ƒCƒg—p«
     //[SerializeField]
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
         CameraCS = O_C.GetComponent<CameraControll>();
 
         Player_Light = GetComponent<Player_Light>();
+        Collide = s_object.GetComponent<Collider>();
 
         key_F = false;
         key_Shift = true;
@@ -69,9 +71,14 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject == s_object)
         {
+            platecount++;
+            if (platecount >= 2)
+            {
+                Collide.isTrigger = false;
+            }
             sta = true;
             StartPlane();
-            //Debug.Log(sta);
+            //Debug.Log(platecount);
         }
     }
 

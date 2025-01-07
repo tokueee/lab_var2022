@@ -754,7 +754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &131655165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1953,7 +1953,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2c0b31a6c5fc99469ffc3bfc5b27de9, type: 2}
+  - {fileID: 2100000, guid: 7c46004914ceeb9459817ac0ef7d974e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3213,7 +3213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2c0b31a6c5fc99469ffc3bfc5b27de9, type: 2}
+  - {fileID: 2100000, guid: 7c46004914ceeb9459817ac0ef7d974e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3405,7 +3405,7 @@ Transform:
   m_GameObject: {fileID: 594762887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.13, z: -0.83}
+  m_LocalPosition: {x: -0.05, y: -0.13, z: 0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5612,7 +5612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &945599430
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6155,31 +6155,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leg:
-  - {fileID: 8300000, guid: 52b928cbb14694d45b9c766479c4600c, type: 3}
-  - {fileID: 8300000, guid: f2e3f7a17e107d241a0f812fbbc1827a, type: 3}
-  - {fileID: 8300000, guid: 7db2089fa1e31f74ab9f33bdb6d4a614, type: 3}
-  - {fileID: 8300000, guid: bbada5b1afbc0f646bb1655f1b62a084, type: 3}
-  - {fileID: 8300000, guid: 172d809c93a42fd46a988b9da7845e4a, type: 3}
-  - {fileID: 8300000, guid: 08567e3c357948042b4a9b6d815a2187, type: 3}
-  - {fileID: 8300000, guid: 58734a11fcd59da49bdac68dd80d642f, type: 3}
-  - {fileID: 8300000, guid: 64595368ed29ca2419a68261d0cd0745, type: 3}
-  - {fileID: 8300000, guid: bf35431e45058154c898da1229abd1d1, type: 3}
-  - {fileID: 8300000, guid: dadcbe4589ddb624bb08d34e9565f337, type: 3}
-  - {fileID: 8300000, guid: 0ea780700cb85ff4a966ddce7f7df63b, type: 3}
-  - {fileID: 8300000, guid: d50af5235e479fa4c97375087ad593ca, type: 3}
-  - {fileID: 8300000, guid: 3bdc52fa8ec5fa746957113b61e569dd, type: 3}
-  - {fileID: 8300000, guid: 40289147fc4e3f041a0c4f9ea3cff83c, type: 3}
-  - {fileID: 8300000, guid: 1c38d1d4d1f0d2840a23e0852e04954b, type: 3}
-  - {fileID: 8300000, guid: f0deb4973fbbef7468f1282bcf05dfaf, type: 3}
-  - {fileID: 8300000, guid: a229f209a45bc46408c81ee864afefc1, type: 3}
-  - {fileID: 8300000, guid: a279db6c6f5e78e449205e452e2bc895, type: 3}
-  - {fileID: 8300000, guid: 63ee520062a03044ca7d3b0bfc7cbf82, type: 3}
-  - {fileID: 8300000, guid: 6d01c6312d0645847ae348823af5d236, type: 3}
-  - {fileID: 8300000, guid: 88ee9fe222991bc4683e32c1aaf4b790, type: 3}
-  - {fileID: 8300000, guid: fc60c78abbb100c4481111b2484bd906, type: 3}
-  - {fileID: 8300000, guid: a69321cbadc91074ead708f2e6fc50d9, type: 3}
-  - {fileID: 8300000, guid: 4e69f2b5fefc4aa4a8f93633a010ff38, type: 3}
-  - {fileID: 8300000, guid: 8e78a2f1612c40646a4bd37cbed91a8f, type: 3}
+  - {fileID: 8300000, guid: e2710445401040242bbac33f201f59d3, type: 3}
+  - {fileID: 8300000, guid: 902dd4e209b796946ab3e2490d5863b1, type: 3}
+  - {fileID: 8300000, guid: ffb250e92a300ec4388934cc3dbe6dc4, type: 3}
+  - {fileID: 8300000, guid: 8fe8d818b02bb38419bdf6fd194df79d, type: 3}
+  - {fileID: 8300000, guid: d84d92c2b4b3cbf498db7c01e3e5b19a, type: 3}
+  - {fileID: 8300000, guid: e179f731b77f899469167215761d1a78, type: 3}
+  - {fileID: 8300000, guid: e75e962fad1a0f14cad8dea634e1b5e4, type: 3}
+  - {fileID: 8300000, guid: c586ff124ec61dc468a11ae54a94222f, type: 3}
+  - {fileID: 8300000, guid: 1aa6a0574450f9042949da70ef65fff0, type: 3}
+  - {fileID: 8300000, guid: 3f32b049874f69b40a494b593a0c1a75, type: 3}
+  - {fileID: 8300000, guid: 2c3ac1056648f3145bd5fe3f3adb9cc3, type: 3}
+  - {fileID: 8300000, guid: f8a18e370e3f5db4d8868f231d0d8117, type: 3}
+  - {fileID: 8300000, guid: cfce172b8af1b6846abe53f051e09508, type: 3}
+  - {fileID: 8300000, guid: 381301ea5751630448405eb13c75d398, type: 3}
+  - {fileID: 8300000, guid: d497663685b59084489fb6e81c118727, type: 3}
+  - {fileID: 8300000, guid: 1fb5af32ae5635a489faf4b3f2f6499c, type: 3}
+  - {fileID: 8300000, guid: 988b59b820187aa4da79a2c5f5991703, type: 3}
+  - {fileID: 8300000, guid: 75bb76ce965990d499229cdd6536aaf3, type: 3}
+  - {fileID: 8300000, guid: 71c820006068ed946bdd8e1c2e0b9389, type: 3}
+  - {fileID: 8300000, guid: ca635efc05a970f4fb9074fd83629623, type: 3}
+  - {fileID: 8300000, guid: d3a0e8a65f553fb4ba3bd69e59acbf13, type: 3}
+  - {fileID: 8300000, guid: 60839146d80032449a7653e8b92581ac, type: 3}
+  - {fileID: 8300000, guid: b4f74373b7685b74b8c0fc45306dd776, type: 3}
+  - {fileID: 8300000, guid: dd09cdb29b8cbb9468abe913566e8382, type: 3}
+  - {fileID: 8300000, guid: dd0561ca31082834c8e664cf9e9a54d8, type: 3}
   Savetime: 0.6
 --- !u!114 &962013012
 MonoBehaviour:
@@ -9816,6 +9816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787661407}
   - component: {fileID: 1787661408}
+  - component: {fileID: 1787661409}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -9900,6 +9901,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1787661409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787661406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1787751692
 GameObject:
   m_ObjectHideFlags: 0

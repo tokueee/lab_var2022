@@ -52,7 +52,7 @@ public class PlayerSE : MonoBehaviour
                 
                 Get_Sound();
                 wait = false;
-                Debug.Log("Get_Sounds");
+                //Debug.Log("Get_Sounds");
             }
         }
         if (PlayerCS.keyCount == 0 || PbTime < Time.time - checktime)
