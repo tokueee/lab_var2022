@@ -7,12 +7,19 @@ using UnityEngine.UI;
 public class Titel : MonoBehaviour
 {
     public GameObject came;
-    [SerializeField] private GameObject canvaspanel;
+    [SerializeField] private GameObject controlspanel;
+    [SerializeField] private GameObject languagepanel;
     [SerializeField] private Text menu_closes;
-    [SerializeField] private GameObject button;
-    [SerializeField] private GameObject C_button;
-    [SerializeField] private GameObject exitbutton;
     [SerializeField] private Text exits;
+    [SerializeField] private Text backt;
+    [SerializeField] private Text starttext;
+    [SerializeField] private Text languagetext;
+    [SerializeField] private GameObject[] button;
+    /*
+    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject C_button;//=2
+    [SerializeField] private GameObject exitbutton;
+    [SerializeField] private GameObject backbutton;*/
 
     private float dtimes;
     private float stimers;
@@ -21,7 +28,15 @@ public class Titel : MonoBehaviour
 
     private string menuclosetexts;
     private string exittext;
+    private string backbuttontext;
+    private string startbuttontext;
+    private string langagebuttontext;
 
+    public enum language
+    {
+        Eng,
+        Jpn
+    }
     void Menu_closes()
     {
         menuclosetexts = "MenuClose";
@@ -34,18 +49,47 @@ public class Titel : MonoBehaviour
         exittext = "End";
         exits.text = exittext;
     }
-    // Start is called before the first frame update
-    void Start()
+
+    void backText()
+    {
+        backbuttontext = "Back";
+        backt.text = backbuttontext;
+        backt.fontSize = 27;
+    }
+
+    void Start_T()
+    {
+        startbuttontext = "START";
+        starttext.text = startbuttontext;
+    }
+
+    void langT()
+    {
+        langagebuttontext = "Language";
+        languagetext.text = langagebuttontext;
+    }
+    void TextSet()
     {
         Menu_closes();
         exitT();
+        backText();
+        Start_T();
+        langT();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        TextSet();
         UnityEngine.Cursor.visible = true;
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         //cntrol + P‚ÅƒvƒŒƒC
+        controlspanel.SetActive(false);
+        languagepanel.SetActive(false);
         Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
     }
 
-    public void Click()
+    /*public void Click()
     {
         if (canvaspanel.activeSelf == false)
         {
@@ -53,7 +97,7 @@ public class Titel : MonoBehaviour
             button.SetActive(false);
             exitbutton.SetActive(false);
         }
-    }
+    }*/
 
     public void Onclicks()
     {
@@ -66,7 +110,7 @@ public class Titel : MonoBehaviour
 
     public void Close_click()
     {
-        if (canvaspanel.activeSelf)
+        if (controlspanel.activeSelf)
         {
             deley = true;
         }
@@ -94,8 +138,8 @@ public class Titel : MonoBehaviour
             if (stimers > 4)
             {
                 //deley = false;
-                canvaspanel.SetActive(false);
-                C_button.SetActive(false);
+                controlspanel.SetActive(false);
+                button[2].SetActive(false);
                 if (stimers > 5)
                 {
                     deley = false;

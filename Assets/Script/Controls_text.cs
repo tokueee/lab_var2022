@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Controls_text : MonoBehaviour
 {
-    private GameObject panel;//パネル操作用
+    [SerializeField] private GameObject panel;//パネル操作用
     [SerializeField] private GameObject otext;//文字をつけ消しするための変数
 
     //テキスト取得
@@ -74,7 +74,6 @@ public class Controls_text : MonoBehaviour
 
     void Start()
     {
-        panel = GameObject.Find("Panel");
         panel.SetActive(false);
         TextSet();//初期設定
     }
