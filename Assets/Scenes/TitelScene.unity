@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 515437969}
   - component: {fileID: 515437972}
   - component: {fileID: 515437973}
+  - component: {fileID: 515437974}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -848,13 +849,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1761117645}
   otext: {fileID: 181653752}
-  gamesystem: {fileID: 2024547456}
   pcontrol: {fileID: 1639947451}
   mcontrol: {fileID: 208920397}
   light_s: {fileID: 1377572171}
   mouse_c: {fileID: 722000179}
   menu_open: {fileID: 181653754}
   menu_close: {fileID: 751980750}
+  globalcontrol: {fileID: 515437974}
 --- !u!114 &515437973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,6 +900,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &515437974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515437968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e1aeea348db8b46abaa11e8077f52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 0
 --- !u!1 &625541937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,6 +3129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   came: {fileID: 515437968}
+  gamesystem: {fileID: 2024547456}
   controlspanel: {fileID: 1761117645}
   languagepanel: {fileID: 1373595155}
   menu_closes: {fileID: 738774759}
@@ -3125,6 +3140,8 @@ MonoBehaviour:
   langbackt: {fileID: 628334460}
   langtext_jp: {fileID: 1622977872}
   langtext_en: {fileID: 73603633}
+  global: {fileID: 515437974}
+  controls_: {fileID: 515437972}
   button:
   - {fileID: 2974766}
   - {fileID: 678757014}
@@ -3134,7 +3151,6 @@ MonoBehaviour:
   - {fileID: 625541937}
   - {fileID: 1787990375}
   - {fileID: 774249294}
-  language: 0
 --- !u!4 &2024547458
 Transform:
   m_ObjectHideFlags: 0

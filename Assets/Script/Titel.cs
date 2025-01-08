@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Titel : MonoBehaviour
 {
     public GameObject came;
+    [SerializeField] private GameObject gamesystem;
     [SerializeField] private GameObject controlspanel;
     [SerializeField] private GameObject languagepanel;
     [SerializeField] private Text menu_closes;
@@ -17,6 +18,8 @@ public class Titel : MonoBehaviour
     [SerializeField] private Text langbackt;
     [SerializeField] private Text langtext_jp;
     [SerializeField] private Text langtext_en;
+    [SerializeField] private Global global;
+    [SerializeField] private Controls_text controls_;
     [SerializeField] private GameObject[] button;
     /*
     [SerializeField] private GameObject button;
@@ -37,16 +40,15 @@ public class Titel : MonoBehaviour
     private string langjtext;
     private string langtexts_en;
 
-    Controls_text controls_;
-    public enum Language
+    /*public enum Language
     {
         Eng,
         Jpn
     }
-    public Language language;
+    public Language language;*/
     void Menu_closes()
     {
-        if (language == Language.Eng)
+        if (global.language == Global.Language.Eng)
         {
             menuclosetexts = "MenuClose and Start";
         }
@@ -60,7 +62,7 @@ public class Titel : MonoBehaviour
 
     void exitT()
     {
-        if(language == Language.Eng)
+        if(global.language == Global.Language.Eng)
         {
             exittext = "End";
         }
@@ -73,7 +75,7 @@ public class Titel : MonoBehaviour
 
     void backText()
     {
-        if (language == Language.Eng)
+        if (global.language == Global.Language.Eng)
         {
             backbuttontext = "Back";
         }
@@ -87,7 +89,7 @@ public class Titel : MonoBehaviour
 
     void Start_T()
     {
-        if (language == Language.Eng)
+        if (global.language == Global.Language.Eng)
         {
             startbuttontext = "START";
         }
@@ -100,7 +102,7 @@ public class Titel : MonoBehaviour
 
     void langT()
     {
-        if (language == Language.Eng)
+        if (global.language == Global.Language.Eng)
         {
             langagebuttontext = "Language";
         }
@@ -118,17 +120,21 @@ public class Titel : MonoBehaviour
     }
     void Langchange()
     {
-        switch (language)
+        switch (global.language)
         {
-            case Language.Eng:
+            case Global.Language.Eng:
                 langjtext = "Japanese";
                 langtexts_en = "English";
                 TitleTextSet();
+                controls_.TextSet();
+                global.SetLanguage(Global.Language.Eng);
                 break;
-            case Language.Jpn:
+            case Global.Language.Jpn:
                 langjtext = "“ú–{Œê";
                 langtexts_en = "‰pŒê";
                 TitleTextSet();
+                controls_.TextSet();
+                global.SetLanguage (Global.Language.Jpn);
                 break;
         }
         langtext_jp.text = langjtext;
@@ -154,23 +160,25 @@ public class Titel : MonoBehaviour
         //cntrol + P‚ÅƒvƒŒƒC
         controlspanel.SetActive(false);
         languagepanel.SetActive(false);
-        controls_ = GetComponent<Controls_text>();
+        controls_ = came.GetComponent<Controls_text>();
+        global = came.GetComponent<Global>();
+        DontDestroyOnLoad(gamesystem);
         Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
     }
 
     public void JpnClick()
     {
-        if(language == Language.Eng)
+        if(global.language == Global.Language.Eng)
         {
-            language = Language.Jpn;
+            global.language = Global.Language.Jpn;
         }
         Langchange();
     }
     public void EngClick()
     {
-        if (language == Language.Jpn)
+        if (global.language == Global.Language.Jpn)
         {
-            language = Language.Eng;
+            global.language = Global.Language.Eng;
         }
         Langchange();
     }
@@ -199,6 +207,8 @@ public class Titel : MonoBehaviour
             Debug.Log(stimers);
             if (stimers > 2)
             {
+                button[2].SetActive(false);
+                button[3].SetActive(false);
                 deley = false;
                 SceneManager.LoadScene("LightSampleScene");
                 //deley = false;
