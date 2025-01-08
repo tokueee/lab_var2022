@@ -11,12 +11,11 @@ public class Global : MonoBehaviour
         Eng,
         Jpn
     }
-    public Language language;
+    public static Language language;
 
-    public Language SetLanguage(Language languages)
+    public void SetLanguage(Language languages)
     {
         language = languages;
-        return language;
     }
 
     public Language GetLanguage() { return language; }

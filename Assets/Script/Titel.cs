@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Titel : MonoBehaviour
 {
+    //Titel-Scene の GameSystem にコンポーネントされている
     public GameObject came;
     [SerializeField] private GameObject gamesystem;
     [SerializeField] private GameObject controlspanel;
@@ -48,7 +49,7 @@ public class Titel : MonoBehaviour
     public Language language;*/
     void Menu_closes()
     {
-        if (global.language == Global.Language.Eng)
+        if (global.GetLanguage() == Global.Language.Eng)
         {
             menuclosetexts = "MenuClose and Start";
         }
@@ -62,7 +63,7 @@ public class Titel : MonoBehaviour
 
     void exitT()
     {
-        if(global.language == Global.Language.Eng)
+        if(global.GetLanguage() == Global.Language.Eng)
         {
             exittext = "End";
         }
@@ -75,7 +76,7 @@ public class Titel : MonoBehaviour
 
     void backText()
     {
-        if (global.language == Global.Language.Eng)
+        if (global.GetLanguage() == Global.Language.Eng)
         {
             backbuttontext = "Back";
         }
@@ -89,7 +90,7 @@ public class Titel : MonoBehaviour
 
     void Start_T()
     {
-        if (global.language == Global.Language.Eng)
+        if (global.GetLanguage() == Global.Language.Eng)
         {
             startbuttontext = "START";
         }
@@ -102,7 +103,7 @@ public class Titel : MonoBehaviour
 
     void langT()
     {
-        if (global.language == Global.Language.Eng)
+        if (global.GetLanguage() == Global.Language.Eng)
         {
             langagebuttontext = "Language";
         }
@@ -120,7 +121,7 @@ public class Titel : MonoBehaviour
     }
     void Langchange()
     {
-        switch (global.language)
+        switch (global.GetLanguage())
         {
             case Global.Language.Eng:
                 langjtext = "Japanese";
@@ -168,17 +169,17 @@ public class Titel : MonoBehaviour
 
     public void JpnClick()
     {
-        if(global.language == Global.Language.Eng)
+        if(global.GetLanguage() == Global.Language.Eng)
         {
-            global.language = Global.Language.Jpn;
+            global.SetLanguage(Global.Language.Jpn);
         }
         Langchange();
     }
     public void EngClick()
     {
-        if (global.language == Global.Language.Jpn)
+        if (global.GetLanguage() == Global.Language.Jpn)
         {
-            global.language = Global.Language.Eng;
+            global.SetLanguage(Global.Language.Eng);
         }
         Langchange();
     }

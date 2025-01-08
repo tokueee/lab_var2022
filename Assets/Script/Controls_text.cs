@@ -32,7 +32,7 @@ public class Controls_text : MonoBehaviour
 
     void heading()
     {
-        if(globalcontrol.language == Global.Language.Eng)
+        if(globalcontrol.GetLanguage() == Global.Language.Eng)
         {
             headcontrol = "PLAYER CONTROLS";
         }
@@ -47,7 +47,7 @@ public class Controls_text : MonoBehaviour
 
     void Moving()
     {
-        if (globalcontrol.language == Global.Language.Eng)
+        if (globalcontrol.GetLanguage() == Global.Language.Eng)
         {
             movecontrol = "MOVE\nW Key Front\tA Key Left\nS  key Back \tD Key Right\nMoveKey + SHIFT Dash";
         }
@@ -61,7 +61,7 @@ public class Controls_text : MonoBehaviour
     }
     void lighting()
     {
-        if (globalcontrol.language == Global.Language.Eng)
+        if (globalcontrol.GetLanguage() == Global.Language.Eng)
         {
             lightcontrol = "LIGHT\nF Key    Light ON/OFF";
         }
@@ -75,7 +75,7 @@ public class Controls_text : MonoBehaviour
     }
     void MouseControler()
     {
-        if (globalcontrol.language == Global.Language.Eng)
+        if (globalcontrol.GetLanguage() == Global.Language.Eng)
         {
             mousecontrol = "MOUSE\nMoveMouse   CameraControl\nLeftClick   Use";
         }
@@ -89,7 +89,7 @@ public class Controls_text : MonoBehaviour
     }
     void Menu_Opens()
     {
-        if (globalcontrol.language == Global.Language.Eng)
+        if (globalcontrol.GetLanguage() == Global.Language.Eng)
         {
             menutext = "E Key MenuOpen";
         }
@@ -103,7 +103,7 @@ public class Controls_text : MonoBehaviour
     }
     void Menu_close()
     {
-        if (globalcontrol.language == Global.Language.Eng)
+        if (globalcontrol.GetLanguage() == Global.Language.Eng)
         {
             menuclosetext = "E Key MenuClose";
         }
@@ -142,13 +142,13 @@ public class Controls_text : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf == false)
             {
                 panel.SetActive(true);
-                ctext.SetActive(true);
+                //ctext.SetActive(true);
                 otext.SetActive(false);
             }
             else if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf)
             {
                 panel.SetActive(false);
-                ctext.SetActive(false);
+                //ctext.SetActive(false);
                 otext.SetActive(true);
             }
         }
