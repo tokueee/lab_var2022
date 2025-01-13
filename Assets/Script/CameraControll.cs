@@ -28,6 +28,9 @@ public class CameraControll: MonoBehaviour
     public float speed = 2f;
     public float dspeed = 4.5f;
 
+    [SerializeField] private Pause poseScript; // poseスクリプトの参照
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,43 +43,47 @@ public class CameraControll: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 campos = camera.position;
-        campos = target.position + offset;
-        //カメラリセット
-        if (Input.GetKey(KeyCode.R))
+        if (poseScript.IsPaused()) { return; }
+        else
         {
-            Rot_Camera = Vector3.zero;
-        }
+            //Vector3 campos = camera.position;
+            campos = target.position + offset;
+            //カメラリセット
+            if (Input.GetKey(KeyCode.R))
+            {
+                Rot_Camera = Vector3.zero;
+            }
 
-        //transform.position = target.position + offset;
+            //transform.position = target.position + offset;
 
-        Rot_Camera.x -= Input.GetAxis("Mouse Y") * RotateSpeed;
-        Rot_Camera.x = Mathf.Clamp(Rot_Camera.x, -90, 90);
-        Rot_Camera.y += Input.GetAxis("Mouse X") * RotateSpeed;
+            Rot_Camera.x -= Input.GetAxis("Mouse Y") * RotateSpeed;
+            Rot_Camera.x = Mathf.Clamp(Rot_Camera.x, -90, 90);
+            Rot_Camera.y += Input.GetAxis("Mouse X") * RotateSpeed;
 
-        transform.rotation = Quaternion.Euler(0, Rot_Camera.y, 0);
-        camera.rotation = Quaternion.Euler(Rot_Camera.x, Rot_Camera.y, 0);
-        Light.rotation = Quaternion.Euler(Rot_Camera.x, Rot_Camera.y, 0);
+            transform.rotation = Quaternion.Euler(0, Rot_Camera.y, 0);
+            camera.rotation = Quaternion.Euler(Rot_Camera.x, Rot_Camera.y, 0);
+            Light.rotation = Quaternion.Euler(Rot_Camera.x, Rot_Camera.y, 0);
 
-        if (playerc.spu && playerc.pu)
-        {
-            time += Time.deltaTime;
-            sin = Mathf.Sin(180 * time * dspeed * Mathf.Deg2Rad);
-            campos.y += sin / dfreque;
+            if (playerc.spu && playerc.pu)
+            {
+                time += Time.deltaTime;
+                sin = Mathf.Sin(180 * time * dspeed * Mathf.Deg2Rad);
+                campos.y += sin / dfreque;
+                //Debug.Log("sin = " + sin);
+            }
+            else if (playerc.pu)
+            {
+                time += Time.deltaTime;
+                sin = Mathf.Sin(180 * time * speed * Mathf.Deg2Rad);
+                campos.y += sin / freque;
+            }
+
+            transform.position = campos;
+            /*sin = Mathf.Sin(Time.time);
+            campos.y = campos.y + sin;*/
+
             //Debug.Log("sin = " + sin);
+            //Debug.Log(campos.y);
         }
-        else if (playerc.pu)
-        {
-            time += Time.deltaTime;
-            sin = Mathf.Sin(180 * time* speed * Mathf.Deg2Rad);
-            campos.y += sin / freque;
-        }
-
-        transform.position = campos;
-        /*sin = Mathf.Sin(Time.time);
-        campos.y = campos.y + sin;*/
-        
-        //Debug.Log("sin = " + sin);
-        //Debug.Log(campos.y);
     }
 }
