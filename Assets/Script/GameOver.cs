@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
     private float dtimes;
     private float stimers;
 
-    private int life = 3;//体力上限
+    public int life = 3;//体力上限
     private float hittime = 4.0f;//無敵時間設定
 
     private bool hits;//エネミーとのヒット判定
