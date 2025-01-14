@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class MouseAction : MonoBehaviour
 {
@@ -18,6 +20,11 @@ public class MouseAction : MonoBehaviour
     Lightset lsets;
     [SerializeField] private GameObject lightsets;
 
+    [SerializeField] private Text Use;
+    [SerializeField] private GameObject UseCanvas;
+
+    private string usetext;
+
     private float times;
     private float stimer;
     private bool mremove = false;
@@ -26,12 +33,20 @@ public class MouseAction : MonoBehaviour
     public bool checks;
     //public bool oneclick = false;
 
+    void UseText()
+    {
+        usetext = "LeftClick Use";
+        Use.text = usetext;
+    }
     // Start is called before the first frame update
     void Start()
     {
         buttons = FindObjectOfType<ButtonJudge>();
         battelys = FindObjectOfType<Battelys>();
         lsets = lightsets.GetComponent<Lightset>();
+
+        UseText();
+        UseCanvas.SetActive(false);
 
         //Debug.Log(buttons.button[1]);
         //Debug.Log(buttons.flag2);
@@ -75,15 +90,34 @@ public class MouseAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
         /*mpos_x = Input.mousePosition.x;
         mpos_y = Input.mousePosition.y;*/
         //Debug.Log(mpos_y);
+        if (Physics.Raycast(ray,out  hit ,2.5f)){
+            Debug.DrawRay(ray.origin, ray.direction * 2.5f, Color.blue, 5, false);
+            if(hit.collider.CompareTag("Button"))
+            {
+               //Debug.Log("hits");
+                UseCanvas.SetActive(true);
+            }
+            else
+            {
+                UseCanvas.SetActive(false); 
+            }
+        }
+        else
+        {
+            UseCanvas.SetActive(false);
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             //マウスボタンが押されたら実行
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit,5.0f))
+            /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;*/
+            if (Physics.Raycast(ray, out hit,2.5f))
             {
                 //buttons = hit.collider.GetComponent<ButtonJudge>();
                 if (buttons != null)
@@ -110,6 +144,7 @@ public class MouseAction : MonoBehaviour
                             buttons.enemyLSpot[h].color = Color.red;
                             buttons.enemyLSpotP[h].color = Color.red;*/
                         }
+                        
                     }
 
                     if(battelys != null)

@@ -324,12 +324,12 @@ public class Lightset : MonoBehaviour
         
         //if (ran.spone){ ran.spone = false;}
         //ƒ{ƒ^ƒ“F•Ï‚¦(•Û—¯)
-        for(int j=0; j < on.Length; j++) {
+       /* for(int j=0; j < on.Length; j++) {
             if (on[j] == true)
             {
                 button.buttonColor(j);
             }
-        }
+        }*/
 
         for (int k = num; k <= maxnum; k++)
         {

@@ -8,8 +8,6 @@ public class UI_SetActive : MonoBehaviour
     [SerializeField] private GameObject OptionCanvas;
     [SerializeField] private Pause poseScript; // poseスクリプトの参照
 
-    [SerializeField] private GameObject Lightbar;
-    [SerializeField] private GameObject opentexts;
     [SerializeField] private GameObject menucanvas;
     // Start is called before the first frame update
     void Start()
@@ -30,13 +28,13 @@ public class UI_SetActive : MonoBehaviour
             else
             {
                 PauseCanvas.SetActive(true);
-                Lightbar.SetActive(false) ;
+                menucanvas.SetActive(false);
             }
         }
         else
         {
             PauseCanvas.SetActive(false);
-            Lightbar.SetActive(true);
+            menucanvas.SetActive(true);
         }
 
     }

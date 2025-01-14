@@ -46,10 +46,10 @@ public class ButtonJudge : MonoBehaviour
             enemyLSpotP[h].color = Color.red;
         }*/
     }
-    public void buttonColor(int i)
+    /*public void buttonColor(int i)
     {
         button[i].GetComponent<MeshRenderer>().materials[0].color = Color.white;
-    }
+    }*/
     public bool butoonjcheck(int k)
     {
         bool check = false;
