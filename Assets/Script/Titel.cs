@@ -215,17 +215,6 @@ public class Titel : MonoBehaviour
         fadeImage.color = new Color(0, 0, 0, targetAlgha);
 
     }
-    public IEnumerator ChangeSceneWithFade()
-    {
-        // フェードアウト
-        yield return StartCoroutine(Fade(1.0f));
-
-        // シーンを切り替え
-        SceneManager.LoadScene("LightSampleScene");
-
-        // フェードイン
-        yield return StartCoroutine(Fade(0.0f));
-    }
 
     // Update is called once per frame
     void Update()
@@ -240,9 +229,10 @@ public class Titel : MonoBehaviour
                 button[2].SetActive(false);
                 button[3].SetActive(false);
                 deley = false;
-                StartCoroutine(ChangeSceneWithFade());
+                Fade(1.0f);
+                SceneManager.LoadScene("LightSampleScene");
                 //deley = false;
-
+                Fade(0.0f);
             }
         }
     }

@@ -66,9 +66,7 @@ public class PlayerSE : MonoBehaviour
     {
         //ランダムを一度止めるための変数
         int chance = 25;
-        audioSource.volume = Soundmanager.instance.GetSFXVolume();
         //0からchance-1までのランダムで音声を選んで返す。
-        Debug.Log($"Playing sound with volume: {audioSource.volume}");
         audioSource.PlayOneShot(leg[Random.Range(0, chance)]);
     }
 }
