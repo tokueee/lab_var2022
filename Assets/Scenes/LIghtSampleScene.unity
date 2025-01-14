@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: 
+  life: 3
 --- !u!65 &41955804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -441,6 +442,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &49425447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 199888778138519426, guid: 2f76903142fc3f34d95efbd188e0258e,
+    type: 3}
+  m_PrefabInstance: {fileID: 199888777475093341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &64725475
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +894,9 @@ MonoBehaviour:
   PauseCanvas: {fileID: 82497165}
   OptionCanvas: {fileID: 82497164}
   poseScript: {fileID: 82497168}
+  Lightbar: {fileID: 1404721800}
+  opentexts: {fileID: 1992845510}
+  menucanvas: {fileID: 49425447}
 --- !u!1 &86010000
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,7 +5617,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 199888777475093341}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1404721800}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
@@ -6538,6 +6548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: 
+  life: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6686,7 +6697,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 199888777475093342}
   otext: {fileID: 1992845510}
-  ctext: {fileID: 0}
   pcontrol: {fileID: 6111594}
   mcontrol: {fileID: 478760124}
   light_s: {fileID: 693872105}
@@ -8478,6 +8488,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1404721800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 199888776578758953, guid: 2f76903142fc3f34d95efbd188e0258e,
+    type: 3}
+  m_PrefabInstance: {fileID: 199888777475093341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434380639
 GameObject:
   m_ObjectHideFlags: 0
@@ -11845,6 +11861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199888777629735834, guid: 2f76903142fc3f34d95efbd188e0258e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 199888777906947955, guid: 2f76903142fc3f34d95efbd188e0258e,
         type: 3}

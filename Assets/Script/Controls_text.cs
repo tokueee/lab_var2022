@@ -8,7 +8,7 @@ public class Controls_text : MonoBehaviour
 {
     [SerializeField] private GameObject panel;//パネル操作用
     [SerializeField] private GameObject otext;//文字をつけ消しするための変数
-    [SerializeField] private GameObject ctext;
+    //[SerializeField] private GameObject ctext;
     //[SerializeField] private GameObject gamesystem;
 
     //テキスト取得
@@ -91,11 +91,11 @@ public class Controls_text : MonoBehaviour
     {
         if (globalcontrol.GetLanguage() == Global.Language.Eng)
         {
-            menutext = "E Key MenuOpen";
+            menutext = "ESCAPE Key PAUSE / E Key MenuOpen";
         }
         else
         {
-            menutext = "E Key メニューを開く";
+            menutext = "ESCAPE Key ポーズ / E Key メニューを開く";
         }
         //menutext = "E Key MenuOpen";
         menu_open.text = menutext;
