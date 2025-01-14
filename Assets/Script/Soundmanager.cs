@@ -8,6 +8,7 @@ public class Soundmanager : MonoBehaviour
 
     [SerializeField] AudioSource BGMSource;
 
+    [SerializeField] float sfxVolume = 1.0f; // SFX—p‚Ì‰¹—Ê
     private void Awake()
     {
         instance = this;
@@ -16,5 +17,14 @@ public class Soundmanager : MonoBehaviour
     public void SetBGMVolume(float volume)
     {
         BGMSource.volume = volume;
+    }
+    public void SetSFXVolume(float volume)
+    {
+        sfxVolume = volume;
+    }
+
+    public float GetSFXVolume()
+    {
+        return sfxVolume;
     }
 }

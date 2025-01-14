@@ -611,11 +611,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 82497167}
+      objectReference: {fileID: 82497178}
     - target: {fileID: 4897907150024988496, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVolume
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897907150024988496, guid: 26e9e2c7226ee854c8a690e3df007042,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Soundmanager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4897907150054088106, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
@@ -792,6 +797,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 82497166}
+    - targetCorrespondingSourceObject: {fileID: 4897907150054088110, guid: 26e9e2c7226ee854c8a690e3df007042,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 82497178}
     - targetCorrespondingSourceObject: {fileID: 4897907150024988498, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       insertIndex: -1
@@ -887,6 +896,20 @@ MonoBehaviour:
   PauseCanvas: {fileID: 82497165}
   OptionCanvas: {fileID: 82497164}
   poseScript: {fileID: 82497168}
+--- !u!114 &82497178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82497161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e055d58ef1e9695438e81bec2100f1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMSource: {fileID: 962013010}
+  sfxVolume: 1
 --- !u!1 &86010000
 GameObject:
   m_ObjectHideFlags: 0

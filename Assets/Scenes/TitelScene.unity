@@ -2285,7 +2285,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1895729484}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2024547458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3330,7 +3330,7 @@ MonoBehaviour:
   - {fileID: 1787990375}
   - {fileID: 774249294}
   fadeImage: {fileID: 1895729485}
-  fadeTime: 1
+  fadeTime: 3
 --- !u!4 &2024547458
 Transform:
   m_ObjectHideFlags: 0
@@ -3339,11 +3339,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024547456}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.128849, y: -13.295361, z: 20.200882}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.128845, y: -13.295349, z: 20.200882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1494516751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2024547459
@@ -3433,9 +3434,8 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1494516751}
-  - {fileID: 1779201405}
   - {fileID: 2024547458}
+  - {fileID: 1779201405}
   - {fileID: 515437971}
   - {fileID: 631963065}
   - {fileID: 2097300184}
