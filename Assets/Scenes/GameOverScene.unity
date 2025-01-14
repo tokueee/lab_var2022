@@ -654,7 +654,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 821988662}
         m_TargetAssemblyTypeName: GameOver_Text, Assembly-CSharp
         m_MethodName: retryClick
         m_Mode: 1
@@ -1046,9 +1046,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 821988662}
         m_TargetAssemblyTypeName: GameOver_Text, Assembly-CSharp
-        m_MethodName: TitleClick
+        m_MethodName: GameOverSet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

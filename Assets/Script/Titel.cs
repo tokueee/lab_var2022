@@ -41,6 +41,8 @@ public class Titel : MonoBehaviour
     private string langjtext;
     private string langtexts_en;
 
+    public Image fadeImage;
+    public float fadeTime;
     /*public enum Language
     {
         Eng,
@@ -198,6 +200,22 @@ public class Titel : MonoBehaviour
         deley = true;
     }
 
+    public IEnumerator Fade(float targetAlgha)
+    {
+        float startAlpha = fadeImage.color.a;
+        float time = 0;
+
+        while (time < fadeTime)
+        {
+            time += Time.deltaTime;
+            float alpha = Mathf.Lerp(startAlpha, targetAlgha, time / fadeTime);
+            fadeImage.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
+        fadeImage.color = new Color(0, 0, 0, targetAlgha);
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -211,8 +229,10 @@ public class Titel : MonoBehaviour
                 button[2].SetActive(false);
                 button[3].SetActive(false);
                 deley = false;
+                Fade(1.0f);
                 SceneManager.LoadScene("LightSampleScene");
                 //deley = false;
+                Fade(0.0f);
             }
         }
     }
