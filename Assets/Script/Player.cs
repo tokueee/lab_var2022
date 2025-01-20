@@ -80,33 +80,11 @@ public class Player : MonoBehaviour
             StartPlane();
             //Debug.Log(platecount);
         }
+        if(other.gameObject.tag == "Goal")//Goalタグ付いているオブジェクトに触れたら実行
+        {
+            Debug.Log("Clear!");
+        }
     }
-
-    /*private void OnCollisionEnter(Collision collision)
-     {
-         if (collision.gameObject == Button[0])
-         {
-            //Debug.Log("true");
-            flags[0] = true;
-         }
-         if (collision.gameObject == Button[1])//名前変更に注意
-         {
-            flags[1] = false;
-         }
-     }
-
-     private void OnCollisionExit(Collision collision)
-     {
-         if (collision.gameObject.name == "Button")
-         {
-            flags[0] = false;
-            Debug.Log(flags[0]);
-         }
-         if(collision.gameObject.name == "Button2")
-         {
-            flags[1] =false;
-         }
-     }*/
 
 
     // Update is called once per frame
