@@ -1,10 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.tvOS;
-using static UnityEditor.PlayerSettings;
 
 public class flicker_Light : MonoBehaviour
 {
@@ -31,7 +27,18 @@ public class flicker_Light : MonoBehaviour
     private float times;
     private float stimer;
 
-
+    void Start()
+    {
+        targetLight = GetComponent<Light>();
+        p_light = player.GetComponent<Player_Light>();
+        //time = 0.0f;
+        intensityMax = p_light.Light_main.intensity;
+        intensityMin = 0.0f;
+        /*cset = Random.Range(0, 2) + 1;
+        noise = 2; 
+        //Debug.Log(cset);
+        */
+    }
     private void flash()
     {
         if (p_light.Light_main.intensity <= 90f)
@@ -53,18 +60,7 @@ public class flicker_Light : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        targetLight = GetComponent<Light>();
-        p_light = player.GetComponent<Player_Light>();
-        //time = 0.0f;
-        intensityMax = p_light.Light_main.intensity;
-        intensityMin = 0.0f;
-        /*cset = Random.Range(0, 2) + 1;
-        noise = 2; 
-        //Debug.Log(cset);
-        */
-    }
+    
 
     // Update is called once per frame
     void Update()
