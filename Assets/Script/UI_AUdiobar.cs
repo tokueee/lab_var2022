@@ -7,6 +7,6 @@ public class UI_Audiobar : MonoBehaviour
     // Start is called before the first frame update
     public void SetVolume(float volume)
     {
-      //  Soundmanager.instance.SetBGMVolume(volume);
+         //  Soundmanager.instance.SetBGMVolume(volume);
     }
 }
