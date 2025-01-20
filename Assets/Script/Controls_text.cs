@@ -137,7 +137,7 @@ public class Controls_text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+        if (SceneManager.GetActiveScene().name == "fastGameScene")
         {
             if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf == false)
             {
