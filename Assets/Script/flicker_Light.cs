@@ -34,7 +34,7 @@ public class flicker_Light : MonoBehaviour
 
     private void flash()
     {
-        if (p_light.Light_main.intensity <= 1.5f)
+        if (p_light.Light_main.intensity <= 90f)
         {
             times = Time.deltaTime;
             stimer = stimer + (times % 2.2f);

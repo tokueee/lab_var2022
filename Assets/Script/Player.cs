@@ -80,10 +80,7 @@ public class Player : MonoBehaviour
             StartPlane();
             //Debug.Log(platecount);
         }
-        if(other.gameObject.tag == "Goal")//Goalタグ付いているオブジェクトに触れたら実行
-        {
-            Debug.Log("Clear!");
-        }
+        
     }
 
 
