@@ -152,16 +152,6 @@ public class Controls_text : MonoBehaviour
                 otext.SetActive(true);
             }
         }
-        /*if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf == false)
-        {
-            panel.SetActive(true);
-            otext.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.E) && panel.activeSelf)
-        {
-            panel.SetActive(false);
-            otext.SetActive(true);
-        }*/
     }
         
 }

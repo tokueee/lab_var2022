@@ -86,32 +86,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionEnter(Collision collision)
-     {
-         if (collision.gameObject == Button[0])
-         {
-            //Debug.Log("true");
-            flags[0] = true;
-         }
-         if (collision.gameObject == Button[1])//ñºëOïœçXÇ…íçà”
-         {
-            flags[1] = false;
-         }
-     }
-
-     private void OnCollisionExit(Collision collision)
-     {
-         if (collision.gameObject.name == "Button")
-         {
-            flags[0] = false;
-            Debug.Log(flags[0]);
-         }
-         if(collision.gameObject.name == "Button2")
-         {
-            flags[1] =false;
-         }
-     }*/
-
 
     // Update is called once per frame
     void FixedUpdate()

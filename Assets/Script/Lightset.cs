@@ -54,58 +54,7 @@ public class Lightset : MonoBehaviour
 
         ran = buttons.GetComponent<Randam>();
         button = buttons.GetComponent<ButtonJudge>();
-        //stime[0] = timer - 10.0f;//10秒後に明るさを下げるための初期設定
-        /*slight[0] = 3.5f;
-        for(int i = 0; i < stime.Length; i++)
-        {
-            timer2 = timer - (10 * (i+1));
-            stime[i] = timer2;
-            //Debug.Log("i =" +stime[i]);
-        }*/
-        /*- foreach(GameObject game in light)
-        {
-            Debug.Log(game.name);
-        }*/
-
-        /*- s_light.SetActive(false);
-        l_light.SetActive(false);
-        l_light2.SetActive(false);
-        l_light3.SetActive(false);
-        */
-
-        /* -for(int i = 0;i < s_light.Length; i++)
-        {
-            light[i].SetActive(false);
-        }*/
-        
-        //タグ確認用
     }
-
-   
-
-    /* -IEnumerator lighting()
-    {
-        for (i = 0; i < mylight.Length; i++)
-        {
-            if (mylight[i] != null)
-            {
-                mylight[i].intensity -= 0.005f;
-                
-
-                if (mylight[i].intensity < minlight)
-                {
-                    mylight[i].intensity = minlight;
-                    //Debug.Log("OK");
-                }
-                //Debug.Log(mylight[i]);
-            }
-            yield return new WaitForSeconds(dtime);
-            //Debug.Log("true");
-            
-        }
-        
-        //Debug.Log("OK");
-    }*/
 
     IEnumerator LightOff()
     {
@@ -344,50 +293,8 @@ public class Lightset : MonoBehaviour
             if (light[k] == light[11] && light[11].activeSelf == false) { buttonchecks(); }
             yield return new WaitForSeconds(keyDtime);
 
-            /*if (light[k] == light[2] && light[2].activeSelf == false) { oneclick = false; }
-            if (light[k] == light[18] && light[18].activeSelf == false) { oneclick = false; }
-            if (light[k] == light[7] && light[7].activeSelf == false) { oneclick = false; }
-            if (light[k] == light[15] && light[15].activeSelf == false) { oneclick = false; }
-            if (light[k] == light[11] && light[11].activeSelf == false) { oneclick = false; }*/
         }
     }
-    /* -IEnumerator Keyboad_LightOff2()
-    {
-        light[4].SetActive(false);
-        for (int i = 16; i < 4; i++)
-        {
-            //Debug.Log(i);
-            light[i].SetActive(false);
-            yield return new WaitForSeconds(keyDtime);
-        }
-    }
-
-    IEnumerator Keyboad_LightOff3()
-    {
-        for (int k = 5; k < light.Length; k++)
-        {
-            light[k].SetActive(false);
-            yield return new WaitForSeconds(keyDtime);
-        }
-    }
-
-    IEnumerator Keyboad_LightOff4()
-    {
-        for (int k = 12; k < light.Length; k++)
-        {
-            light[k].SetActive(false);
-            yield return new WaitForSeconds(keyDtime);
-        }
-    }
-
-    IEnumerator Keyboad_LightOff5()
-    {
-        for (int k = 8; k < light.Length; k++)
-        {
-            light[k].SetActive(false);
-            yield return new WaitForSeconds(keyDtime);
-        }
-    }*/
 
     // Update is called once per frame
     void Update()
@@ -419,101 +326,5 @@ public class Lightset : MonoBehaviour
         if(mouseaction.flagjudge() == true) { StartCoroutine(Keyboard_LightOn()); }
         */
 
-        /* - if (light[0].activeSelf == false)
-        { 
-            if (mouseaction.Buttonj1() == true)
-            {
-                //Debug.Log("ON");
-                StartCoroutine(Keyboard_LightOn());
-            }
-            if (mouseaction.Buttonj2() == true)
-            {
-                StartCoroutine(Keyboard_LightOn());
-            }
-        }*/
-        /* - if (flight.intensity  > 0)
-        {
-            times =timer - Time.time;
-            //Debug.Log(times);
-            if (times < stime[0] && times > stime[1])
-            {
-                slight[0] = 3.0f;
-                flight.intensity = slight[0];
-            }else if (times < stime[1] &&  times > stime[2])
-            {
-                slight[1] = 2.5f;
-                flight.intensity = slight[1];
-            }else if(times < stime[2] && times > stime[3])
-            {
-                slight[2] = 2.0f;
-                flight.intensity = slight[2];
-            }else if(times < stime[3] && times > stime[4])
-            {
-                slight[3] = 1.5f;
-                flight.intensity = slight[3];
-            }
-            else if(times < stime[4])
-            {
-                slight[4] = 1.0f;
-                flight.intensity = slight[4];
-            }
-            if (times < 0)
-            {
-                flight.intensity = 0;
-                times = 0.0f;
-            }
-            /*if(times  < 0)
-            {
-                timer = 10;
-                p -= 1;
-                flight.intensity = p * 0.5f;
-                Debug.Log("P="+ p);
-            }
-            
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                flight.intensity = 0.0f;
-            }
-        }
-        else if (flight.intensity == 0.0f && Input.GetKeyDown(KeyCode.F))
-        {
-            flight.intensity = slight[0];
-            if (times < stime[0] && times > stime[1])
-            {
-                slight[0] = 3.0f;
-                flight.intensity = slight[0];
-            }
-            else if (times < stime[1] && times > stime[2])
-            {
-                slight[1] = 2.5f;
-                flight.intensity = slight[1];
-            }
-            else if (times < stime[2] && times > stime[3])
-            {
-                slight[2] = 2.0f;
-                flight.intensity = slight[2];
-            }
-            else if (times < stime[3] && times > stime[4])
-            {
-                slight[3] = 1.5f;
-                flight.intensity = slight[3];
-            }
-            else if (times < stime[4] && times > 0)
-            {
-                slight[4] = 1.0f;
-                flight.intensity = slight[4];
-            }
-            if (times < 0)
-            {
-                flight.intensity = 0.0f;
-                times = 0.0f;
-            }
-        }*/
-        /* -if (mylight[1].intensity == minlight)
-        {
-            Debug.Log("true");
-            light.SetActive(false);
-            //タグ確認
-        }*/
     }
 }

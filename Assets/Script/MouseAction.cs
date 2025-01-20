@@ -6,15 +6,6 @@ using UnityEngine.UIElements;
 
 public class MouseAction : MonoBehaviour
 {
-    //マウスのX座標
-    /*private float mpos_x;
-    private float mposmax_x = 680;
-    private float mposmin_x = 600;
-    
-    //マウスのY座標
-    private float mpos_y;
-    private float mposmax_y = 410;
-    private float mposmin_y = 320;*/
     ButtonJudge buttons;
     Battelys battelys;
     Lightset lsets;
@@ -168,87 +159,8 @@ public class MouseAction : MonoBehaviour
                             }
                         }
                     }
-                    /*for (int j = 0; j < battelys.Battely.Length; j++)
-                    {
-                        if (hit.collider.gameObject == battelys.Battely[j])
-                        {
-                            battelys.Get_num(j);
-                        }
-                    }*/
                     Buttonflag();
 
-                    //※
-                    {
-                        /*if (buttons.flag2[0] == true) { Buttonj1(); }
-                        else if (buttons.flag2[1] == true) { Buttonj2(); }
-                        else if (buttons.flag2[2] == true) { Buttonj3(); }
-                        else if (buttons.flag2[3] == true) { Buttonj4(); }
-                        else if (buttons.flag2[4] == true) { Buttonj5(); }*/
-                        /*if (hit.collider.gameObject == buttons.button[0])
-                        {
-                            if (buttons.button[0] && buttons.flag2[0] == false)
-                            {
-                                buttons.flag2[0] = true;
-                                //Debug.Log("good");
-                            }
-                            else if (buttons.button[0] && buttons.flag2[0])
-                            {
-                                buttons.flag2[0] = true;
-                            }
-                            Buttonj1();
-                        }
-                        if (hit.collider.gameObject == buttons.button[1])
-                        {
-                            if (buttons.button[1]  && buttons.flag2[1] == false)
-                            {
-                                buttons.flag2[1] = true;
-                            }
-                            else if (buttons.button[1] && buttons.flag2[1])
-                            {
-                                buttons.flag2[1] = true;
-                            }
-                            Buttonj2();
-                        }
-
-                        if (hit.collider.gameObject == buttons.button[2])
-                        {
-                            if (buttons.button[2] && buttons.flag2[2] == false)
-                            {
-                                buttons.flag2[2] = true;
-                            }
-                            else if (buttons.button[2] && buttons.flag2[2])
-                            {
-                                buttons.flag2[2] = true;
-                            }
-                            Buttonj3();
-                        }
-
-                        if (hit.collider.gameObject == buttons.button[3])
-                        {
-                            if (buttons.button[3] && buttons.flag2[3] == false)
-                            {
-                                buttons.flag2[3] = true;
-                            }
-                            else if (buttons.button[3] && buttons.flag2[3])
-                            {
-                                buttons.flag2[3] = true;
-                            }
-                            Buttonj4();
-                        }
-
-                        if (hit.collider.gameObject == buttons.button[4])
-                        {
-                            if (buttons.button[4] && buttons.flag2[4] == false)
-                            {
-                                buttons.flag2[4] = true;
-                            }
-                            else if (buttons.button[4] && buttons.flag2[4])
-                            {
-                                buttons.flag2[4] = true;
-                            }
-                            Buttonj4();
-                        }*/
-                    }
 
                     flagjudge();
                    
@@ -292,14 +204,6 @@ public class MouseAction : MonoBehaviour
 
             }
         }
-        /*if (mpos_x >= mposmin_x && mpos_y >= mposmin_y && mpos_x <= mposmax_x && mpos_y <= mposmax_y)
-        {
-            //Debug.Log(Input.mousePosition);
-            if (players != null)
-            {
-                Debug.Log(hit.collider.transform.position);
-            }
-        }*/
         
     }
 }
