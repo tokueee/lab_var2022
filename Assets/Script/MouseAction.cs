@@ -18,7 +18,9 @@ public class MouseAction : MonoBehaviour
     ButtonJudge buttons;
     Battelys battelys;
     Lightset lsets;
+    Global globalsm;
     [SerializeField] private GameObject lightsets;
+    [SerializeField] private GameObject Globalsc;
 
     [SerializeField] private Text Use;
     [SerializeField] private GameObject UseCanvas;
@@ -35,7 +37,15 @@ public class MouseAction : MonoBehaviour
 
     void UseText()
     {
-        usetext = "LeftClick Use";
+        if(globalsm.GetLanguage() == Global.Language.Eng)
+        {
+            usetext = "LeftClick Use";
+        }
+        else
+        {
+            usetext = "左クリック 使用";
+        }
+        //usetext = "LeftClick Use";
         Use.text = usetext;
     }
     // Start is called before the first frame update
@@ -44,6 +54,7 @@ public class MouseAction : MonoBehaviour
         buttons = FindObjectOfType<ButtonJudge>();
         battelys = FindObjectOfType<Battelys>();
         lsets = lightsets.GetComponent<Lightset>();
+        globalsm = Globalsc.GetComponent<Global>();
 
         UseText();
         UseCanvas.SetActive(false);

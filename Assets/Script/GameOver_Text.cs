@@ -19,6 +19,8 @@ public class GameOver_Text : MonoBehaviour
     private string retrytext;
     private string titletext;
 
+    //[SerializeField] private GameObject gamesystem;
+
     Global globals;
     public void retryClick()
     {
@@ -32,21 +34,45 @@ public class GameOver_Text : MonoBehaviour
 
     void GameOverT()
     {
-        Gameovertexts = "GAME OVER";
+        if(globals.GetLanguage() == Global.Language.Eng)
+        {
+            Gameovertexts = "GAME OVER";
+        }
+        else
+        {
+            Gameovertexts = "ゲームオーバー";
+        }
+        //Gameovertexts = "GAME OVER";
         GameoverText.text = Gameovertexts;
         GameoverText.fontSize = 90;
     }
 
     void RetryT()
     {
-        retrytext = "RETRY";
+        if(globals.GetLanguage() == Global.Language.Eng)
+        {
+            retrytext = "RETRY";
+        }
+        else
+        {
+            retrytext = "リトライする";
+        }
+        //retrytext = "RETRY";
         Retrybutton.text = retrytext;
         Retrybutton.fontSize = 40;
     }
 
     void TitleT()
     {
-        titletext = "TITLE";
+        if (globals.GetLanguage() == Global.Language.Eng)
+        {
+            titletext = "TITLE";
+        }
+        else
+        {
+            titletext = "タイトルヘ";
+        }
+        //titletext = "TITLE";
         Titlebutton.text = titletext;
         Titlebutton.fontSize = 40;
     }
@@ -59,10 +85,11 @@ public class GameOver_Text : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        globals = GetComponent<Global>();
         GameOverSet();
         UnityEngine.Cursor.visible = true;
         UnityEngine.Cursor.lockState = CursorLockMode.None;
-        globals = GetComponent<Global>();
+        //globals = GetComponent<Global>();
     }
 
     // Update is called once per frame
