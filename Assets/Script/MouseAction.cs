@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -132,7 +133,10 @@ public class MouseAction : MonoBehaviour
                             lsets.oneclick = true;
                             //Debug.Log(lsets.oneclick);
                             buttons.Getnum(h);
-                            checks = buttons.butoonjcheck(h);//Randam‚ÅŽg‚¤‚½‚ß‚Échcks‚ÉŒ‹‰Ê‚ð“ü‚ê‚é
+                            if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+                            {
+                                checks = buttons.butoonjcheck(h);//Randam‚ÅŽg‚¤‚½‚ß‚Échcks‚ÉŒ‹‰Ê‚ð“ü‚ê‚é
+                            }
                             //Debug.Log(checks);
                             /*if (buttons.button[h] && buttons.flag2[h] == false)
                             {
