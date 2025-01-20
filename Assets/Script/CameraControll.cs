@@ -47,6 +47,7 @@ public class CameraControll: MonoBehaviour
         else
         {
             //Vector3 campos = camera.position;
+
             campos = target.position + offset;
             //カメラリセット
             if (Input.GetKey(KeyCode.R))
@@ -60,7 +61,7 @@ public class CameraControll: MonoBehaviour
             Rot_Camera.x = Mathf.Clamp(Rot_Camera.x, -90, 90);
             Rot_Camera.y += Input.GetAxis("Mouse X") * RotateSpeed;
 
-            transform.rotation = Quaternion.Euler(0, Rot_Camera.y, 0);
+            target.rotation = Quaternion.Euler(0, Rot_Camera.y, 0);
             camera.rotation = Quaternion.Euler(Rot_Camera.x, Rot_Camera.y, 0);
             Light.rotation = Quaternion.Euler(Rot_Camera.x, Rot_Camera.y, 0);
 

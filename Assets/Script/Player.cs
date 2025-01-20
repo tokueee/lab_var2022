@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     private bool isON = true;
     */
 
+    public Ani_Door doorController;  // ドアのDoorControllerスクリプトを参照
 
     // Start is called before the first frame update
     void Start()
@@ -196,6 +197,10 @@ public class Player : MonoBehaviour
                     rb.velocity = Vector3.zero;
                 }
             }*/
+        }
+        if (Input.GetKeyDown(KeyCode.G))  // Eキーが押されたとき
+        {
+            doorController.OpenDoor();  // ドアを開ける
         }
 
         //Shiftキーでダッシュする
