@@ -165,6 +165,10 @@ public class MouseAction : MonoBehaviour
                     flagjudge();
                    
                 }
+                if (hit.collider.CompareTag("Goal"))//Goalタグ付いているオブジェクトにRayが触れたら実行
+                {
+                    Debug.Log("Clear!");
+                }
             }
             Debug.DrawRay(ray.origin, ray.direction*5, Color.red, 5,false);
         }
