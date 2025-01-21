@@ -15,12 +15,24 @@ public class Light2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < firstfloorlight.Length;i++)
+        Lightseting();
+    }
+
+    void Lightseting()
+    {
+        for (int i = 0; i < firstfloorlight.Length; i++)
         {
             firstfloorlight[i].SetActive(false);
         }
+        for (int i = 0;i < secondfloorlight.Length; i++)
+        {
+            secondfloorlight[i].SetActive(false);
+        }
+        for(int i = 0; i <thirdfloorlight.Length; i++)
+        {
+            thirdfloorlight[i].SetActive(false);
+        }
     }
-
     // Update is called once per frame
     void Update()
     {

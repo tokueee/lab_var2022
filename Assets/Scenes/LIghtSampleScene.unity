@@ -6424,6 +6424,7 @@ MonoBehaviour:
   s_object: {fileID: 1150299301}
   pu: 0
   spu: 0
+  doorController: {fileID: 0}
 --- !u!114 &962013008
 MonoBehaviour:
   m_ObjectHideFlags: 0

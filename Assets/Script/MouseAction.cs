@@ -11,7 +11,7 @@ public class MouseAction : MonoBehaviour
     Battelys battelys;
     Lightset lsets;
     Global globalsm;
-    [SerializeField] private GameObject lightsets;
+    private GameObject lightsets;
     [SerializeField] private GameObject Globalsc;
 
     [SerializeField] private Text Use;
@@ -43,9 +43,14 @@ public class MouseAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+        {
+            lightsets = GameObject.Find("LIGHT");
+            lsets = lightsets.GetComponent<Lightset>();
+        }
         buttons = FindObjectOfType<ButtonJudge>();
         battelys = FindObjectOfType<Battelys>();
-        lsets = lightsets.GetComponent<Lightset>();
+        //lsets = lightsets.GetComponent<Lightset>();
         globalsm = Globalsc.GetComponent<Global>();
 
         UseText();
