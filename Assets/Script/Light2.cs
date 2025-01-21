@@ -14,11 +14,14 @@ public class Light2 : MonoBehaviour
     [SerializeField] private GameObject[] thirdfloorlight;//ŽOŠKŽº“à
 
     SwichButton Swichb;
+    MouseAction mactions;
     [SerializeField] private GameObject swichb;
+
     // Start is called before the first frame update
     void Start()
     {
         Swichb = swichb.GetComponent<SwichButton>();
+        mactions = swichb.GetComponent<MouseAction>();
         Lightseting();
     }
 
@@ -42,11 +45,11 @@ public class Light2 : MonoBehaviour
     {
         for(int i = 0; i < Swichb.Sbutton.Length; i++)
         {
-            if (Swichb.Sflag[i] == true && firstfloorlight[i].activeSelf == false)
+            if (firstfloorlight[i].activeSelf == false && mactions.count == 1)
             {
                 firstfloorlight[i].SetActive(true);
             }
-            else if (Swichb.Sflag[i] == false && firstfloorlight[i].activeSelf == true)
+            else if (firstfloorlight[i].activeSelf == true && mactions.count == 0)
             {
                 firstfloorlight[i].SetActive(false);
             }

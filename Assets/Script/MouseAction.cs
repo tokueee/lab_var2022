@@ -26,6 +26,7 @@ public class MouseAction : MonoBehaviour
     private bool flags;
 
     public bool checks;
+    public int count = 0;
     //public bool oneclick = false;
 
     void UseText()
@@ -131,7 +132,14 @@ public class MouseAction : MonoBehaviour
             {
                 if (swichbuttons != null)
                 {
-                    
+                    if(count == 0)
+                    {
+                        count = 1;
+                    }
+                    else if(count == 1)
+                    {
+                        count = 0;
+                    }
                     for (int j = 0; j < swichbuttons.Sbutton.Length; j++)
                     {
                         if (hit.collider.gameObject == swichbuttons.Sbutton[j])
