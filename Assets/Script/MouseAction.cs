@@ -76,7 +76,7 @@ public class MouseAction : MonoBehaviour
         }*/
         return flags;
     }
-
+    /*
     //flagの結果を渡す
     public bool Buttonj1(){ return buttons.flag2[0];}
     public bool Buttonj2(){ return buttons.flag2[1];}
@@ -91,7 +91,7 @@ public class MouseAction : MonoBehaviour
         else if (buttons.flag2[2] == true) { Buttonj3(); }
         else if (buttons.flag2[3] == true) { Buttonj4(); }
         else if (buttons.flag2[4] == true) { Buttonj5(); }
-    }
+    }*/
 
     
 
@@ -168,10 +168,10 @@ public class MouseAction : MonoBehaviour
                             }
                         }
                     }
-                    Buttonflag();
+                    //Buttonflag();
 
 
-                    flagjudge();
+                    //flagjudge();
                    
                 }
                 if (hit.collider.CompareTag("Goal"))//Goalタグ付いているオブジェクトにRayが触れたら実行
