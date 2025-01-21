@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Light2 : MonoBehaviour
 {
-    //Directional Light Rotation X = -13
+    //Directional Light Rotation X = -15
     //S_,“ñŠKƒ‰ƒCƒg@T_.OŠKƒ‰ƒCƒg
     [SerializeField] private GameObject[] firstfloorlight_h;//ˆêŠK˜L‰º
     [SerializeField] private GameObject[] firstfloorlight;//ˆêŠKº“à    
@@ -12,9 +12,13 @@ public class Light2 : MonoBehaviour
     [SerializeField] private GameObject[] secondfloorlight;//“ñŠKº“à
     [SerializeField] private GameObject[] thirdfloorlight_h;//OŠK˜L‰º
     [SerializeField] private GameObject[] thirdfloorlight;//OŠKº“à
+
+    SwichButton Swichb;
+    [SerializeField] private GameObject swichb;
     // Start is called before the first frame update
     void Start()
     {
+        Swichb = swichb.GetComponent<SwichButton>();
         Lightseting();
     }
 
@@ -33,9 +37,24 @@ public class Light2 : MonoBehaviour
             thirdfloorlight[i].SetActive(false);
         }
     }
+
+    void SwichLightOn()
+    {
+        for(int i = 0; i < Swichb.Sbutton.Length; i++)
+        {
+            if (Swichb.Sflag[i] == true && firstfloorlight[i].activeSelf == false)
+            {
+                firstfloorlight[i].SetActive(true);
+            }
+            else if (Swichb.Sflag[i] == false && firstfloorlight[i].activeSelf == true)
+            {
+                firstfloorlight[i].SetActive(false);
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        if(Swichb.Swichjudge() == true) { SwichLightOn(); }
     }
 }

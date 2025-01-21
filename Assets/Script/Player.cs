@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour
     //flags[0] ‚Íbutton‚Ì”»’è
     //public GameObject[] Button;
     
-    [SerializeField] private GameObject s_object;
+    private GameObject s_object;
     private bool sta;
 
 
@@ -54,11 +55,16 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         //player_light = Light.GetComponent<Light>();
         //UpdateLight();
+        if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+        {
+            s_object = GameObject.Find("Start_Plane");
+            Collide = s_object.GetComponent<Collider>();
+        }
         O_C = GameObject.Find("Main Camera");
         CameraCS = O_C.GetComponent<CameraControll>();
 
         Player_Light = GetComponent<Player_Light>();
-        Collide = s_object.GetComponent<Collider>();
+        //Collide = s_object.GetComponent<Collider>();
 
         key_F = false;
         key_Shift = true;
