@@ -5695,8 +5695,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sbutton:
   - {fileID: 1073602710}
+<<<<<<< HEAD
   - {fileID: 1570447806}
   Sflag: 0000
+=======
+  Sflag: 00
+>>>>>>> 9a6da9b (ボタン押してライトがつくようにした)
 --- !u!1 &776473269
 GameObject:
   m_ObjectHideFlags: 0

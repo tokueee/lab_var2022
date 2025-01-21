@@ -132,6 +132,7 @@ public class MouseAction : MonoBehaviour
             {
                 if (swichbuttons != null)
                 {
+<<<<<<< HEAD
                     if(count == 0)
                     {
                         count = 1;
@@ -156,6 +157,25 @@ public class MouseAction : MonoBehaviour
                     {
                         if (hit.collider.gameObject == battelys.Battely[j])
                         {
+=======
+                    
+                    for (int j = 0; j < swichbuttons.Sbutton.Length; j++)
+                    {
+                        if (hit.collider.gameObject == swichbuttons.Sbutton[j])
+                        {
+                            swichbuttons.SwichGetnum(j);
+                        }
+                    }
+                }
+                swichbuttons.Swichjudge();
+
+                if (battelys != null)
+                {
+                    for (int j = 0; j < battelys.Battely.Length; j++)
+                    {
+                        if (hit.collider.gameObject == battelys.Battely[j])
+                        {
+>>>>>>> 9a6da9b (ボタン押してライトがつくようにした)
                             battelys.Get_num(j);
                         }
                     }
