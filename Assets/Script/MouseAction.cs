@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class MouseAction : MonoBehaviour
 {
     ButtonJudge buttons;
+    SwichButton swichbuttons;
     Battelys battelys;
     Lightset lsets;
     Global globalsm;
@@ -25,6 +26,7 @@ public class MouseAction : MonoBehaviour
     private bool flags;
 
     public bool checks;
+    public int count = 0;
     //public bool oneclick = false;
 
     void UseText()
@@ -49,6 +51,7 @@ public class MouseAction : MonoBehaviour
             lsets = lightsets.GetComponent<Lightset>();
         }
         buttons = FindObjectOfType<ButtonJudge>();
+        swichbuttons = FindObjectOfType<SwichButton>();
         battelys = FindObjectOfType<Battelys>();
         //lsets = lightsets.GetComponent<Lightset>();
         globalsm = Globalsc.GetComponent<Global>();
@@ -127,51 +130,88 @@ public class MouseAction : MonoBehaviour
             RaycastHit hit;*/
             if (Physics.Raycast(ray, out hit,2.5f))
             {
-                //buttons = hit.collider.GetComponent<ButtonJudge>();
-                if (buttons != null)
+                if (swichbuttons != null)
                 {
-                    for(int h = 0; h < buttons.button.Length; h++)
+                    if(count == 0)
                     {
-                        //ライトのボタンを押しているのか検出するためのif分
-                        if (hit.collider.gameObject == buttons.button[h] && !lsets.oneclick)
-                        {
-                            lsets.oneclick = true;
-                            //Debug.Log(lsets.oneclick);
-                            buttons.Getnum(h);
-                            if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
-                            {
-                                checks = buttons.butoonjcheck(h);//Randamで使うためにchcksに結果を入れる
-                            }
-                            //Debug.Log(checks);
-                            /*if (buttons.button[h] && buttons.flag2[h] == false)
-                            {
-                                buttons.flag2[h] = true;
-                                //Debug.Log("good");
-                            }
-                            else if (buttons.button[h] && buttons.flag2[h])
-                            {
-                                buttons.flag2[h] = true;
-                            }
-                            buttons.enemyLSpot[h].color = Color.red;
-                            buttons.enemyLSpotP[h].color = Color.red;*/
-                        }
-                        
+                        count = 1;
                     }
-
-                    if(battelys != null)
+                    else if(count == 1)
                     {
-                        for (int j = 0; j < battelys.Battely.Length; j++)
+                        count = 0;
+                    }
+                    for (int j = 0; j < swichbuttons.Sbutton.Length; j++)
+                    {
+                        if (hit.collider.gameObject == swichbuttons.Sbutton[j])
                         {
-                            if (hit.collider.gameObject == battelys.Battely[j])
+                            swichbuttons.SwichGetnum(j);
+                        }
+                    }
+                }
+                swichbuttons.Swichjudge();
+
+                if (battelys != null)
+                {
+                    for (int j = 0; j < battelys.Battely.Length; j++)
+                    {
+                        if (hit.collider.gameObject == battelys.Battely[j])
+                        {
+                            battelys.Get_num(j);
+                        }
+                    }
+                }
+                if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+                {
+                    //buttons = hit.collider.GetComponent<ButtonJudge>();
+                    if (buttons != null)
+                    {
+                        for (int h = 0; h < buttons.button.Length; h++)
+                        {
+                            //ライトのボタンを押しているのか検出するためのif分
+                            if (hit.collider.gameObject == buttons.button[h] && !lsets.oneclick)
                             {
-                                battelys.Get_num(j);
+                                lsets.oneclick = true;
+                                //Debug.Log(lsets.oneclick);
+                                buttons.Getnum(h);
+                                checks = buttons.butoonjcheck(h);//Randamで使うためにchcksに結果を入れる
+                                                                 //Debug.Log(checks);
+                                /*if (buttons.button[h] && buttons.flag2[h] == false)
+                                {
+                                    buttons.flag2[h] = true;
+                                    //Debug.Log("good");
+                                }
+                                else if (buttons.button[h] && buttons.flag2[h])
+                                {
+                                    buttons.flag2[h] = true;
+                                }
+                                buttons.enemyLSpot[h].color = Color.red;
+                                buttons.enemyLSpotP[h].color = Color.red;*/
+                            }
+
+                        }
+                        /*for(int j = 0;  j < swichbuttons.Sbutton.Length; j++)
+                        {
+                            if(hit.collider.gameObject == swichbuttons.Sbutton[j])
+                            {
+                                swichbuttons.SwichGetnum(j);
                             }
                         }
+
+                        if(battelys != null)
+                        {
+                            for (int j = 0; j < battelys.Battely.Length; j++)
+                            {
+                                if (hit.collider.gameObject == battelys.Battely[j])
+                                {
+                                    battelys.Get_num(j);
+                                }
+                            }
+                        }*/
                     }
                     //Buttonflag();
 
 
-                    //flagjudge();
+                    flagjudge();
                    
                 }
                 if (hit.collider.CompareTag("Goal"))//Goalタグ付いているオブジェクトにRayが触れたら実行
@@ -182,15 +222,18 @@ public class MouseAction : MonoBehaviour
             Debug.DrawRay(ray.origin, ray.direction*5, Color.red, 5,false);
         }
 
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            //マウスボタンから離れた時に実行
-            for(int i = 0; i < buttons.flag2.Length; i++)
+            if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
             {
-                if (buttons.flag2[i] == true)
+                //マウスボタンから離れた時に実行
+                for (int i = 0; i < buttons.flag2.Length; i++)
                 {
-                    mremove = true;
-                    continue;
+                    if (buttons.flag2[i] == true)
+                    {
+                        mremove = true;
+                        continue;
+                    }
                 }
             }
             /*if (buttons.flag2[0] || buttons.flag2[1])
@@ -199,22 +242,25 @@ public class MouseAction : MonoBehaviour
                 //buttons.flag2[0] = false ;
              }*/
         }
-        
-        if (mremove)
-        {
-            times = Time.time;
-            stimer = times % 10.1f;
-            //Debug.Log(stimer);
-            if(stimer > 10)
-            {
-                mremove = false;
-                checks = false;
-                //falseにして次の実行に備える
-                for(int flag = 0; flag < buttons.flag2.Length; flag++)
-                {
-                    buttons.flag2[flag] = false;
-                }
 
+        if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+        {
+            if (mremove)
+            {
+                times = Time.time;
+                stimer = times % 10.1f;
+                //Debug.Log(stimer);
+                if (stimer > 10)
+                {
+                    mremove = false;
+                    checks = false;
+                    //falseにして次の実行に備える
+                    for (int flag = 0; flag < buttons.flag2.Length; flag++)
+                    {
+                        buttons.flag2[flag] = false;
+                    }
+
+                }
             }
         }
         
