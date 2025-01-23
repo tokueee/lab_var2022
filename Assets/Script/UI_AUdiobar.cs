@@ -9,4 +9,9 @@ public class UI_Audiobar : MonoBehaviour
     {
          //  Soundmanager.instance.SetBGMVolume(volume);
     }
+    public void OnVolumeChange(float volume)
+    {
+        Debug.Log($"Volume changed to: {volume}");
+        Soundmanager.instance.SetSFXVolume(volume);
+    }
 }

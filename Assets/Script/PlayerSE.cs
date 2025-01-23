@@ -64,6 +64,7 @@ public class PlayerSE : MonoBehaviour
 
     private void Get_Sound()//1/25の確率でtrueを返す関数
     {
+        audioSource.volume = Soundmanager.instance.GetSFXVolume(); // SFX音量を取得
         //ランダムを一度止めるための変数
         int chance = 25;
         //0からchance-1までのランダムで音声を選んで返す。
