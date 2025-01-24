@@ -14,21 +14,16 @@ public class Light2 : MonoBehaviour
     [SerializeField] private GameObject[] thirdfloorlight;//�O�K����
 
     SwichButton Swichb;
-<<<<<<< HEAD
     MouseAction mactions;
     [SerializeField] private GameObject swichb;
+    //[SerializeField] private GameObject swichb;
 
-=======
-    [SerializeField] private GameObject swichb;
->>>>>>> 9a6da9b (ボタン押してライトがつくようにした)
     // Start is called before the first frame update
     void Start()
     {
         Swichb = swichb.GetComponent<SwichButton>();
-<<<<<<< HEAD
         mactions = swichb.GetComponent<MouseAction>();
-=======
->>>>>>> 9a6da9b (ボタン押してライトがつくようにした)
+
         Lightseting();
     }
 
@@ -52,19 +47,18 @@ public class Light2 : MonoBehaviour
     {
         for(int i = 0; i < Swichb.Sbutton.Length; i++)
         {
-<<<<<<< HEAD
+
             if (firstfloorlight[i].activeSelf == false && mactions.count == 1)
             {
                 firstfloorlight[i].SetActive(true);
             }
             else if (firstfloorlight[i].activeSelf == true && mactions.count == 0)
-=======
+
             if (Swichb.Sflag[i] == true && firstfloorlight[i].activeSelf == false)
             {
                 firstfloorlight[i].SetActive(true);
             }
             else if (Swichb.Sflag[i] == false && firstfloorlight[i].activeSelf == true)
->>>>>>> 9a6da9b (ボタン押してライトがつくようにした)
             {
                 firstfloorlight[i].SetActive(false);
             }
