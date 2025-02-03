@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
     [SerializeField] private GameObject OptionCanvas;
     // Start is called before the first frame update
 
+    public bool check_clear = true;//trueÇ™ÉQÅ[ÉÄPlayíÜ
 
     // Update is called once per frame
     void Update()
@@ -19,12 +20,12 @@ public class Pause : MonoBehaviour
     }
 
 
-    private void PauseOn()
+    public void PauseOn()
     {
         Time.timeScale = 0;
     }
 
-    private void PauseOff()
+    public void PauseOff()
     {
         Time.timeScale = 1;
     }
@@ -34,18 +35,21 @@ public class Pause : MonoBehaviour
     }
     public void TogglePause()
     {
-        pause = !pause;
-        if (pause)
+        if (check_clear)//trueÇ™ÉQÅ[ÉÄPlayíÜ
         {
-            PauseOn();
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            PauseOff();
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            pause = !pause;
+            if (pause)
+            {
+                PauseOn();
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                PauseOff();
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
     }
 
