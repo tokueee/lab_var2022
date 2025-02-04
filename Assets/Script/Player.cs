@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour
@@ -30,7 +29,7 @@ public class Player : MonoBehaviour
     //flags[0] はbuttonの判定
     //public GameObject[] Button;
     
-    private GameObject s_object;
+    [SerializeField] private GameObject s_object;
     private bool sta;
 
 
@@ -47,7 +46,6 @@ public class Player : MonoBehaviour
     private bool isON = true;
     */
 
-    public Ani_Door doorController;  // ドアのDoorControllerスクリプトを参照
 
     // Start is called before the first frame update
     void Start()
@@ -55,11 +53,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         //player_light = Light.GetComponent<Light>();
         //UpdateLight();
-        if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
-        {
-            s_object = GameObject.Find("Start_Plane");
-            Collide = s_object.GetComponent<Collider>();
-        }
         O_C = GameObject.Find("Main Camera");
         CameraCS = O_C.GetComponent<CameraControll>();
 
@@ -203,10 +196,6 @@ public class Player : MonoBehaviour
                     rb.velocity = Vector3.zero;
                 }
             }*/
-        }
-        if (Input.GetKeyDown(KeyCode.G))  // Eキーが押されたとき
-        {
-            doorController.OpenDoor();  // ドアを開ける
         }
 
         //Shiftキーでダッシュする

@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Audiobar : MonoBehaviour
+public class Door : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void SetVolume(float volume)
+    void Start()
     {
-         //  Soundmanager.instance.SetBGMVolume(volume);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

@@ -8,13 +8,14 @@ public class Randam : MonoBehaviour
     public bool SaveGet_rand = true;
 
     //Player playerscript; //呼ぶスクリプトにあだなつける
+    [SerializeField] private GameObject camera;
     MouseAction mouseactionsc;
 
     public bool spone;
     // Start is called before the first frame update
     void Start()
     {
-        mouseactionsc =GetComponent<MouseAction>();
+        mouseactionsc = camera.GetComponent<MouseAction>();
     }
 
     // Update is called once per frame

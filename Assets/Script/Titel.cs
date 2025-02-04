@@ -67,7 +67,7 @@ public class Titel : MonoBehaviour
     {
         if(global.GetLanguage() == Global.Language.Eng)
         {
-            exittext = "End";
+            exittext = "EXIT";
         }
         else
         {
@@ -128,18 +128,15 @@ public class Titel : MonoBehaviour
             case Global.Language.Eng:
                 langjtext = "Japanese";
                 langtexts_en = "English";
-                TitleTextSet();
-                controls_.TextSet();
-                global.SetLanguage(Global.Language.Eng);
                 break;
             case Global.Language.Jpn:
                 langjtext = "“ú–{Œê";
                 langtexts_en = "‰pŒê";
-                TitleTextSet();
-                controls_.TextSet();
-                global.SetLanguage (Global.Language.Jpn);
                 break;
         }
+        TitleTextSet();
+        controls_.TextSet();
+
         langtext_jp.text = langjtext;
         langtext_en.text = langtexts_en;
     }
@@ -156,6 +153,8 @@ public class Titel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        deley = false;
+        stimers = 0;
         Langchange();
         TitleTextSet();
         UnityEngine.Cursor.visible = true;
@@ -223,14 +222,14 @@ public class Titel : MonoBehaviour
         {
             dtimes = Time.deltaTime;
             stimers = stimers + (dtimes % 2.2f);
-            Debug.Log(stimers);
+            Debug.Log(stimers + ", " + dtimes);
             if (stimers > 2)
             {
                 button[2].SetActive(false);
                 button[3].SetActive(false);
                 deley = false;
                 Fade(1.0f);
-                SceneManager.LoadScene("LightSampleScene");
+                SceneManager.LoadScene("MainGame");
                 //deley = false;
                 Fade(0.0f);
             }

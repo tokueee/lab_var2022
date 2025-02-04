@@ -121,135 +121,133 @@ public class Lightset : MonoBehaviour
 
     IEnumerator Keyboard_LightOn()
     {
-        for (int h = 0; h < 5; h++)
+        if (mouseaction.Buttonj1() == true)
         {
-            if (button.flag2[h] && button.flag2[0] == true)
+            //Debug.Log(ran.spone);
+            changelight(0);
+            /*if (ran.spone)
             {
-                //Debug.Log(ran.spone);
-                changelight(0);
-                /*if (ran.spone)
-                {
-                    button.enemyLSpot[0].color = Color.red;
-                    button.enemyLSpotP[0].color = Color.red;
-                }
-                else
-                {
-                    button.enemyLSpot[0].color = Color.white;
-                    button.enemyLSpotP[0].color = Color.white;
-                }*/
-                if (light[2].activeSelf == false)
-                {
-                    //light[2]が消えているなら実行
-                    //oneclick = false;
-                    num = 0;
-                    maxnum = 2;
-                    on[0] = true;
-                    light[0].SetActive(true);
-                    light[1].SetActive(true);
-                    light[2].SetActive(true);
-                    yield return new WaitForSeconds(keyDtime);
-                    StartCoroutine(Keyboad_LightOff());
-                }
-                else if (light[2].activeSelf == true)
-                {
-                    oneclick = false;
-                }
-                //Debug.Log(playerscript.flag);
+                button.enemyLSpot[0].color = Color.red;
+                button.enemyLSpotP[0].color = Color.red;
             }
-            if (button.flag2[h] && button.flag2[1] == true)
+            else
             {
-                if (light[18].activeSelf == false)
-                {
-                    changelight(1);
-                    //Debug.Log("ON");
-                    //light[18]が消えているなら実行
-                    //oneclick = false;
-                    num = 16;
-                    maxnum = 18;
-                    nf = true;
-                    on[1] = true;
-                    light[4].SetActive(true);
-                    light[16].SetActive(true);
-                    light[17].SetActive(true);
-                    light[18].SetActive(true);
-                    yield return new WaitForSeconds(keyDtime);
-                    StartCoroutine(Keyboad_LightOff());
-                }
-                else if (light[18].activeSelf == true)
-                {
-                    oneclick = false;
-                }
+                button.enemyLSpot[0].color = Color.white;
+                button.enemyLSpotP[0].color = Color.white;
+            }*/
+            if (light[2].activeSelf == false)
+            {
+                //light[2]が消えているなら実行
+                //oneclick = false;
+                num = 0;
+                maxnum = 2;
+                on[0] = true;
+                light[0].SetActive(true);
+                light[1].SetActive(true);
+                light[2].SetActive(true);
+                yield return new WaitForSeconds(keyDtime);
+                StartCoroutine(Keyboad_LightOff());
+            }
+            else if (light[2].activeSelf == true)
+            {
+                oneclick = false;
+            }
+            //Debug.Log(playerscript.flag);
+        }
+        if (mouseaction.Buttonj2() == true)
+        {
+            if (light[18].activeSelf == false)
+            {
+                changelight(1);
+                //Debug.Log("ON");
+                //light[18]が消えているなら実行
+                //oneclick = false;
+                num = 16;
+                maxnum = 18;
+                nf = true;
+                on[1] = true;
+                light[4].SetActive(true);
+                light[16].SetActive(true);
+                light[17].SetActive(true);
+                light[18].SetActive(true);
+                yield return new WaitForSeconds(keyDtime);
+                StartCoroutine(Keyboad_LightOff());
+            }
+            else if (light[18].activeSelf == true)
+            {
+                oneclick = false;
+            }
 
-                /*yield return new WaitForSeconds(keyDtime);
-                StartCoroutine(Keyboad_LightOff());*/
-            }
-            if (button.flag2[h] && button.flag2[2] == true)
+            /*yield return new WaitForSeconds(keyDtime);
+            StartCoroutine(Keyboad_LightOff());*/
+        }
+        if (mouseaction.Buttonj3() == true)
+        {
+            if (light[7].activeSelf == false)
             {
-                if (light[7].activeSelf == false)
-                {
-                    changelight(2);
-                    //light[7]が消えているなら実行
-                    //oneclick = false;
-                    num = 5;
-                    maxnum = 7;
-                    on[2] = true;
-                    light[5].SetActive(true);
-                    light[6].SetActive(true);
-                    light[7].SetActive(true);
-                    yield return new WaitForSeconds(keyDtime);
-                    StartCoroutine(Keyboad_LightOff());
-                }
-                else if (light[7].activeSelf == true)
-                {
-                    oneclick = false;
-                }
+                changelight(2);
+                //light[7]が消えているなら実行
+                //oneclick = false;
+                num = 5;
+                maxnum = 7;
+                on[2] = true;
+                light[5].SetActive(true);
+                light[6].SetActive(true);
+                light[7].SetActive(true);
+                yield return new WaitForSeconds(keyDtime);
+                StartCoroutine(Keyboad_LightOff());
+            }
+            else if (light[7].activeSelf == true)
+            {
+                oneclick = false;
+            }
 
-            }
-            if (button.flag2[h] && button.flag2[3] == true)
+        }
+        if (mouseaction.Buttonj4() == true)
+        {
+            if (light[15].activeSelf == false)
             {
-                if (light[15].activeSelf == false)
-                {
-                    changelight(3);
-                    //light[15]が消えているなら実行
-                    //oneclick = false;
-                    num = 12;
-                    maxnum = 15;
-                    on[3] = true;
-                    light[12].SetActive(true);
-                    light[13].SetActive(true);
-                    light[14].SetActive(true);
-                    light[15].SetActive(true);
-                    yield return new WaitForSeconds(keyDtime);
-                    StartCoroutine(Keyboad_LightOff());
-                }
-                else if (light[15].activeSelf == true)
-                {
-                    oneclick = false;
-                }
+                changelight(3);
+                //light[15]が消えているなら実行
+                //oneclick = false;
+                num = 12;
+                maxnum = 15;
+                on[3] = true;
+                light[12].SetActive(true);
+                light[13].SetActive(true);
+                light[14].SetActive(true);
+                light[15].SetActive(true);
+                yield return new WaitForSeconds(keyDtime);
+                StartCoroutine(Keyboad_LightOff());
             }
-            if (button.flag2[h] && button.flag2[4] == true)
+            else if (light[15].activeSelf == true)
             {
-                if (light[11].activeSelf == false)
-                {
-                    changelight(4);
-                    //light[11]が消えているなら実行
-                    //oneclick = false;
-                    num = 8;
-                    maxnum = 11;
-                    on[4] = true;
-                    light[8].SetActive(true);
-                    light[9].SetActive(true);
-                    light[10].SetActive(true);
-                    light[11].SetActive(true);
-                    yield return new WaitForSeconds(keyDtime);
-                    StartCoroutine(Keyboad_LightOff());
-                }
-                else if (light[11].activeSelf == true)
-                {
-                    oneclick = false;
-                }
+                oneclick = false;
             }
         }
+        if (mouseaction.Buttonj5() == true)
+        {
+            if (light[11].activeSelf == false)
+            {
+                changelight(4);
+                //light[11]が消えているなら実行
+                //oneclick = false;
+                num = 8;
+                maxnum = 11;
+                on[4] = true;
+                light[8].SetActive(true);
+                light[9].SetActive(true);
+                light[10].SetActive(true);
+                light[11].SetActive(true);
+                yield return new WaitForSeconds(keyDtime);
+                StartCoroutine(Keyboad_LightOff());
+            }
+            else if (light[11].activeSelf == true)
+            {
+                oneclick = false;
+            }
+        }
+
         //Debug.Log(mylight[0]);
     }
 

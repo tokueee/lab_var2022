@@ -19,9 +19,7 @@ public class GameOver_Text : MonoBehaviour
     private string retrytext;
     private string titletext;
 
-    //[SerializeField] private GameObject gamesystem;
-
-    Global globals;
+    private Global globals;
     public void retryClick()
     {
         SceneManager.LoadScene(retry);
@@ -85,7 +83,7 @@ public class GameOver_Text : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        globals = GetComponent<Global>();
+        globals = FindObjectOfType<Global>();
         GameOverSet();
         UnityEngine.Cursor.visible = true;
         UnityEngine.Cursor.lockState = CursorLockMode.None;

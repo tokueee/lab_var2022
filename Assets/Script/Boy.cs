@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Boy : MonoBehaviour
 {
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject Only_My;
+    [SerializeField] private GameObject With_Friend;//‡—¬Œã‚É’Ç‰Á‚³‚ê‚é—v‘f
 
     private NavMeshAgent navMeshAgent;
 
@@ -36,6 +38,12 @@ public class Boy : MonoBehaviour
                 yield return null; // isPlayer‚ªfalse‚ÌŠÔ‚Í‘Ò‹@
             }
         }
+    }
+
+    private void Update()
+    {
+        With_Friend.SetActive(isPlayer);
+        Only_My.SetActive(!isPlayer);
     }
 
 }

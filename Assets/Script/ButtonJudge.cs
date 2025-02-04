@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ButtonJudge : MonoBehaviour
 {
+    [SerializeField] private GameObject camera;
     MouseAction action;
 
     //[SerializeField] private GameObject Prand;//PlayerÇì¸ÇÍÇÈ
@@ -21,7 +20,7 @@ public class ButtonJudge : MonoBehaviour
      */
     void Start()
     {
-        action = GetComponent<MouseAction>();
+        action = camera.GetComponent<MouseAction>();
     }
 
     // Update is called once per frame
@@ -29,7 +28,7 @@ public class ButtonJudge : MonoBehaviour
     {
 
     }
-    public bool Getnum(int h)
+    public void Getnum(int h)
     {
         //Debug.Log(ran.spone);
         if (button[h] && flag2[h] == false)
@@ -41,7 +40,7 @@ public class ButtonJudge : MonoBehaviour
         {
             flag2[h] = true;
         }
-        return flag2[h];
+
         /*if (ran.spone)
         {
             enemyLSpot[h].color = Color.red;
@@ -54,15 +53,14 @@ public class ButtonJudge : MonoBehaviour
     }*/
     public bool butoonjcheck(int k)
     {
-
         bool check = false;
         switch (k)
         {
-            case 0: check = flag2[0]; break;
-            case 1: check = flag2[1]; break;
-            case 2: check = flag2[2]; break;
-            case 3: check = flag2[3]; break;
-            case 4: check = flag2[4]; break;
+            case 0: check = action.Buttonj1(); break;
+            case 1: check = action.Buttonj2(); break;
+            case 2: check = action.Buttonj3(); break;
+            case 3: check = action.Buttonj4(); break;
+            case 4: check = action.Buttonj5(); break;
         }
         //Buttonj1Å`5Ç¢Ç∏ÇÍÇ©ÇÃflagÇcheckÇ…ì¸ÇÍÇƒï‘Ç∑
         return check;

@@ -8,6 +8,8 @@ public class Player_Light : MonoBehaviour
     private GameObject obj; //Playerっていうオブジェクトを探す
     private Player PlayerCS; //呼ぶスクリプトにあだなつける
 
+    [SerializeField] private Boy boy;
+
     //ライト用↓
     [SerializeField]
     private GameObject Light;
@@ -51,6 +53,7 @@ public class Player_Light : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //手持ちライト制御(meinLight)
         {
             if (0 < Lv_Lm)
@@ -58,10 +61,10 @@ public class Player_Light : MonoBehaviour
                 if (isON)
                 {
                     //main & sub で利用する確認時間記録　/*ライトを点けたときに一回だけ起動してほしい*/
-                    if (!down_F) 
+                    if (!down_F)
                     {
                         checktime[0] = Time.time;
-                        if (reset_light) 
+                        if (reset_light)
                         {
                             checktime[1] = Time.time;
                             reset_light = false;
@@ -82,18 +85,18 @@ public class Player_Light : MonoBehaviour
 
                     //sub
                     {
-                        Lv_Ls[0] = 75-((75/timer[1]) * (time_Elapsed[1] + Time.time - checktime[1]));
-                        Lv_Ls[1] = 25-((25/timer[1]) * (time_Elapsed[1] + Time.time - checktime[1]));
-                        scale_bar =1 - ((1 / timer[1]) * (time_Elapsed[1] + Time.time - checktime[1]));
+                        Lv_Ls[0] = 75 - ((75 / timer[1]) * (time_Elapsed[1] + Time.time - checktime[1]));
+                        Lv_Ls[1] = 25 - ((25 / timer[1]) * (time_Elapsed[1] + Time.time - checktime[1]));
+                        scale_bar = 1 - ((1 / timer[1]) * (time_Elapsed[1] + Time.time - checktime[1]));
                     }
-                    
+
 
 
                 }
                 if (!isON)
                 {
                     //main & sub の経過時間記録　/*ライトを消したときに一回だけ起動してほしい*/
-                    if (down_F) 
+                    if (down_F)
                     {
                         time_Elapsed[0] = time_Elapsed[0] + Time.time - checktime[0];
                         time_Elapsed[1] = time_Elapsed[1] + Time.time - checktime[1];
@@ -101,7 +104,7 @@ public class Player_Light : MonoBehaviour
                     }
                 }
 
-                
+
             }
             else
             {
@@ -113,20 +116,24 @@ public class Player_Light : MonoBehaviour
             Lightbar.value = scale_bar;
             down_F = isON;
         }
+        
     }
 
     public void ChageLight()
     {
-        if (0 < Lv_Lm)
+        if (boy.isPlayer)
         {
-            isON = !isON;
+            if (0 < Lv_Lm)
+            {
+                isON = !isON;
+            }
+            else
+            {
+                isON = false;
+            }
+            UpdateLight();
+            // Debug.Log(isON);
         }
-        else
-        {
-            isON = false;
-        }
-        UpdateLight();
-        // Debug.Log(isON);
     }
 
     public void UpdateLight()
