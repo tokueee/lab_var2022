@@ -18,7 +18,7 @@ public class Clear_text : MonoBehaviour
     [SerializeField] private Boy boy;
 
 
-    private Pause pause;
+    [SerializeField]private Pause pause;
     [System.NonSerialized]public bool touch_Goal=false;
     private float time;
 

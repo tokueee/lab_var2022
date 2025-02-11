@@ -85,7 +85,7 @@ public class MouseAction : MonoBehaviour
         }*/
         return flags;
     }
-    /*
+    
     //flag‚ÌŒ‹‰Ê‚ð“n‚·
     public bool Buttonj1(){ return buttons.flag2[0];}
     public bool Buttonj2(){ return buttons.flag2[1];}
@@ -100,7 +100,7 @@ public class MouseAction : MonoBehaviour
         else if (buttons.flag2[2] == true) { Buttonj3(); }
         else if (buttons.flag2[3] == true) { Buttonj4(); }
         else if (buttons.flag2[4] == true) { Buttonj5(); }
-    }*/
+    }
 
     
 

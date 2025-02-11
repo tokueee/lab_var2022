@@ -4966,11 +4966,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1643640879}
+      objectReference: {fileID: 2006890393}
     - target: {fileID: 4897907150024988496, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnVolumeChange
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897907150024988496, guid: 26e9e2c7226ee854c8a690e3df007042,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Soundmanager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4897907150054088106, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
@@ -5485,7 +5490,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765778761}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 574c6fb4cf3efad4da33daf6ab791c59, type: 3}
   m_Name: 
@@ -5506,7 +5511,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765778761}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81e1aeea348db8b46abaa11e8077f52f, type: 3}
   m_Name: 
@@ -5695,12 +5700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sbutton:
   - {fileID: 1073602710}
-<<<<<<< HEAD
-  - {fileID: 1570447806}
-  Sflag: 0000
-=======
   Sflag: 00
->>>>>>> 9a6da9b (ボタン押してライトがつくようにした)
 --- !u!1 &776473269
 GameObject:
   m_ObjectHideFlags: 0
@@ -11953,6 +11953,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2006890391}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 347f8a2743d404641bd40265b97048ae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2006890394}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 347f8a2743d404641bd40265b97048ae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2006890393}
   m_SourcePrefab: {fileID: 100100000, guid: 347f8a2743d404641bd40265b97048ae, type: 3}
 --- !u!1 &1501095658
 GameObject:
@@ -12505,8 +12513,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1554027871
 GameObject:
   m_ObjectHideFlags: 0
@@ -12539,7 +12545,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1162314664}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1554027873
 BoxCollider:
@@ -12644,7 +12650,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1162314664}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1567569967
 BoxCollider:
@@ -12854,7 +12860,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 515250156}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1571654483
 BoxCollider:
@@ -12927,7 +12933,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571654481}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> origin/main
 --- !u!1 &1578857830
 GameObject:
   m_ObjectHideFlags: 0
@@ -13078,8 +13083,6 @@ MonoBehaviour:
   - {fileID: 1909712944}
   - {fileID: 1306303058}
   - {fileID: 994352663}
-<<<<<<< HEAD
-=======
   swichb: {fileID: 772343174}
 --- !u!1 &1593995158
 GameObject:
@@ -13113,7 +13116,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1162314664}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1593995160
 BoxCollider:
@@ -13186,7 +13189,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593995158}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> origin/main
 --- !u!1 &1605697270
 GameObject:
   m_ObjectHideFlags: 0
@@ -15128,8 +15130,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1867229668
 GameObject:
   m_ObjectHideFlags: 0
@@ -15162,7 +15162,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1162314664}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1867229670
 BoxCollider:
@@ -15268,7 +15268,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 515250156}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1876507417
 BoxCollider:
@@ -15390,9 +15390,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 515250156}
-  - {fileID: 1162314664}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891694336
@@ -15427,7 +15425,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1162314664}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1891694338
 BoxCollider:
@@ -15533,7 +15531,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1162314664}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1891914832
 BoxCollider:
@@ -15660,7 +15658,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 5, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 515250156}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1898321385
 BoxCollider:
@@ -15754,7 +15752,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
->>>>>>> origin/main
 --- !u!1 &1909712944
 GameObject:
   m_ObjectHideFlags: 0
@@ -16443,6 +16440,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2006890393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006890387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e055d58ef1e9695438e81bec2100f1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMSource: {fileID: 0}
+  sfxVolume: 1
+--- !u!114 &2006890394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006890387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe7d3be493f5074eb1318c0a45cd678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leg:
+  - {fileID: 8300000, guid: e2710445401040242bbac33f201f59d3, type: 3}
+  - {fileID: 8300000, guid: 902dd4e209b796946ab3e2490d5863b1, type: 3}
+  Savetime: 1
 --- !u!1 &2012094444
 GameObject:
   m_ObjectHideFlags: 0
@@ -17506,3 +17533,13 @@ SceneRoots:
   - {fileID: 498290147}
   - {fileID: 1578857831}
   - {fileID: 5716149477263181635}
+  - {fileID: 1554027872}
+  - {fileID: 1567569966}
+  - {fileID: 1571654482}
+  - {fileID: 1593995159}
+  - {fileID: 1867229669}
+  - {fileID: 1876507416}
+  - {fileID: 1885544338}
+  - {fileID: 1891694337}
+  - {fileID: 1891914831}
+  - {fileID: 1898321384}
