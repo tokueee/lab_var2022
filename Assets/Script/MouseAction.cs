@@ -28,7 +28,6 @@ public class MouseAction : MonoBehaviour
 
     public bool checks;
     public int[] count;
-    private bool fcheck;
     //public bool oneclick = false;
 
     void UseText()
@@ -146,7 +145,7 @@ public class MouseAction : MonoBehaviour
 
                         if (hit.collider.gameObject == swichbuttons.Sbutton[j])
                         {
-                            fcheck=swichbuttons.SwichGetnum(j);
+                            swichbuttons.SwichGetnum(j);
                             if (count[j] == 0)
                             {
                                 count[j] = 1;
@@ -158,7 +157,7 @@ public class MouseAction : MonoBehaviour
                         }
                     }
                 }
-                swichbuttons.Swichjudge(fcheck);
+                swichbuttons.Swichjudge();
 
                 if (battelys != null)
                 {

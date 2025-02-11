@@ -63,7 +63,6 @@ public class Light2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Swichb.Getflag();
-        //if(Swichb.Swichjudge() == true) { SwichLightOn(); }//‚¢‚¸‚ê‚©‚ÌSflag‚ªtrue‚Ì‚¾‚¯Às‚³‚¹‚é
+        if(Swichb.Swichjudge() == true) { SwichLightOn(); }//‚¢‚¸‚ê‚©‚ÌSflag‚ªtrue‚Ì‚¾‚¯Às‚³‚¹‚é
     }
 }

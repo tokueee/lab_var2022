@@ -19,29 +19,23 @@ public class SwichButton : MonoBehaviour
         Sflag = new bool[Sbutton.Length];//Sbutton‚Ì”‚ğQÆ
     }
 
-    public bool Swichjudge(bool flags)
+    public bool Swichjudge()
     {
         for (int k = 0; k < Sbutton.Length; k++)
         {
             if (Sflag[k] == true)
             {
-                flags = true;
+                flag = true;
             }
             else if (Sflag[k] == false)
             {
-                flags = false;
+                flag = false;
             }
         }
         Debug.Log(flag);
-        Setflag(flag);
-        return flags;
+        return flag;
     }
 
-    public void Setflag(bool flag2)
-    {
-        flag = Swichjudge(flag2);
-    }
-    public bool Getflag() { Debug.Log(flag); return flag; }
 
     public bool SwichGetnum(int k)
     {
