@@ -43,6 +43,7 @@ public class Light2 : MonoBehaviour
 
     void SwichLightOn()
     {
+        Debug.Log("ON");
         for(int i = 0; i < Swichb.Sbutton.Length; i++)
         {
             //ライトのつけ消しを制御するスクリプト
@@ -62,6 +63,7 @@ public class Light2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Swichb.Swichjudge() == true) { SwichLightOn(); }//いずれかのSflagがtrueの時だけ実行させる
+        Swichb.Getflag();
+        //if(Swichb.Swichjudge() == true) { SwichLightOn(); }//いずれかのSflagがtrueの時だけ実行させる
     }
 }
