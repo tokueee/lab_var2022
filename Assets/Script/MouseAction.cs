@@ -46,7 +46,7 @@ public class MouseAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
             lightsets = GameObject.Find("LIGHT");
             lsets = lightsets.GetComponent<Lightset>();
@@ -169,7 +169,7 @@ public class MouseAction : MonoBehaviour
                         }
                     }
                 }
-                if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+                if (SceneManager.GetActiveScene().name == "MainScene")
                 {
                     //buttons = hit.collider.GetComponent<ButtonJudge>();
                     if (buttons != null)
@@ -233,7 +233,7 @@ public class MouseAction : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+            if (SceneManager.GetActiveScene().name == "MainScene")
             {
                 //マウスボタンから離れた時に実行
                 for (int i = 0; i < buttons.flag2.Length; i++)
@@ -252,7 +252,7 @@ public class MouseAction : MonoBehaviour
              }*/
         }
 
-        if (SceneManager.GetActiveScene().name == "LIghtSampleScene")
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
             if (mremove)
             {
