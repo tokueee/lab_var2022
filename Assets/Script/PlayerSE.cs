@@ -40,7 +40,7 @@ public class PlayerSE : MonoBehaviour
         {
             PbTime = Savetime;
         }
-        if (Player.keyCount != 0)
+        if (PlayerCS.keyCount != 0)
         {
             if (wait)
             {
@@ -55,7 +55,7 @@ public class PlayerSE : MonoBehaviour
                 //Debug.Log("Get_Sounds");
             }
         }
-        if (Player.keyCount == 0 || PbTime < Time.time - checktime)
+        if (PlayerCS.keyCount == 0 || PbTime < Time.time - checktime)
         {
             wait = true;
         }

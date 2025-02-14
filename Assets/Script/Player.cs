@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     Vector3 get_see;
 
     [System.NonSerialized]//public変数をインスペクター上に表示したくない時に使えるやつ
-    static public int keyCount;
+    public int keyCount;
     [System.NonSerialized]
     public bool key_W, key_A, key_S, key_D,key_F, key_Shift;
     float[] global_x = new float[4], global_y = new float[4], global_z = new float[4];//移動制御変数
@@ -38,13 +38,6 @@ public class Player : MonoBehaviour
     private Collider Collide;
     private int platecount = 0;
 
-    //ライト用↓
-    //[SerializeField]
-    //private GameObject Light;
-    /*
-    private Light player_light;
-    private bool isON = true;
-    */
 
 
     // Start is called before the first frame update
@@ -61,11 +54,6 @@ public class Player : MonoBehaviour
 
         key_F = false;
         key_Shift = true;
-
-        //for(int i = 0; i < prayer_XYZ.Length; i++)
-        //{
-        //    prayer_XYZ[i] = transform;
-        //}
     }
 
     public bool StartPlane()
@@ -83,17 +71,19 @@ public class Player : MonoBehaviour
             }
             sta = true;
             StartPlane();
+            //Debug.Log(platecount);
         }
         
     }
 
 
+    // Update is called once per frame
     void FixedUpdate()
     {
         get_see = CameraCS.Rot_Camera;
         //各速度の値を毎度初期化
         keyCount = 0;
-        key_W = false; key_A = false; key_S = false; key_D = false;
+        key_W = false; key_A = false; key_S = false; key_D = false; 
         for (int i = 0; i < 4; i++)
         {
             global_x[i] = 0; global_y[i] = 0; global_z[i] = 0;
@@ -120,8 +110,8 @@ public class Player : MonoBehaviour
                 keyCount += 1;
                 key_D = true;
             }
-            //左に進む
-            if (Input.GetKey(KeyCode.A))
+                //左に進む
+                if (Input.GetKey(KeyCode.A))
             {
                 keyCount += 1;
                 key_A = true;
@@ -144,36 +134,13 @@ public class Player : MonoBehaviour
             if (keyCount >= 2)
             {
                 mspeed = mspeed / Mathf.Sqrt(2);
-                //Debug.Log(Mathf.Sqrt(2));
 
             }
         }
-
     }
 
     private void Update() 
     {
-        //Debug.Log(isON);
-        //※keyを離したときに止まる
-        {/*
-            if (Input.GetKeyUp(KeyCode.W) ||
-                Input.GetKeyUp(KeyCode.A) ||
-                Input.GetKeyUp(KeyCode.S) ||
-                Input.GetKeyUp(KeyCode.D)) 
-            {
-                if (Input.GetKey(KeyCode.W)||
-                    Input.GetKey(KeyCode.A)||
-                    Input.GetKey(KeyCode.S)||
-                    Input.GetKey(KeyCode.D))
-                {
-                
-                }
-                else
-                {
-                    rb.velocity = Vector3.zero;
-                }
-            }*/
-        }
 
         //Shiftキーでダッシュする
         {
@@ -197,11 +164,6 @@ public class Player : MonoBehaviour
         }
         //WASD keyのどれかが押されたときの反応(移動)
         {
-            /*if (keyCount >= 1)
-            {
-                pu = true;
-            }
-            else { pu = false; }*/
 
 
             if (key_W)
@@ -247,33 +209,6 @@ public class Player : MonoBehaviour
                 Player_Light.ChageLight();
             }
         }
-
     }
 
-    //Player_Lightに移植済み
-    /*※private void ChageLight()
-    {
-        isON = !isON;
-        UpdateLight();
-        // Debug.Log(isON);
-    }
-
-    private void UpdateLight()
-    {
-        //player_light.enabled = isON;
-        if (isON)
-        {
-            Light.SetActive(true);
-        }
-        else
-        {
-            Light.SetActive(false);
-        }
-    }
-
-    public bool Lightcheck()
-    {
-        return isON;
-    }
-    */
 }

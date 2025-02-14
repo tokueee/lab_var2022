@@ -19,7 +19,7 @@ public class Clear_text : MonoBehaviour
 
 
     private Pause pause;
-    [System.NonSerialized]public bool touch_Goal=false;
+    [System.NonSerialized] public bool touch_Goal = false;
     private float time;
 
     private string nowtext;

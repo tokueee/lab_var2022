@@ -30,10 +30,8 @@ public class MouseAction : MonoBehaviour
     public int[] count;
     //public bool oneclick = false;
 
-    //Boy.csをコンポーネント
     [SerializeField] private Boy boy;
     [SerializeField] private Clear_text Cl_txt;
-
 
     void UseText()
     {
@@ -60,7 +58,7 @@ public class MouseAction : MonoBehaviour
         swichbt = GameObject.Find("Lighting switch");
         swichbuttons = swichbt.GetComponent<SwichButton>();
         battelys = FindObjectOfType<Battelys>();
-
+        //lsets = lightsets.GetComponent<Lightset>();
         globalsm = Globalsc.GetComponent<Global>();
 
         UseText();
@@ -70,6 +68,8 @@ public class MouseAction : MonoBehaviour
         {
             count[i] = 0;
         }
+        //Debug.Log(buttons.button[1]);
+        //Debug.Log(buttons.flag2);
     }
     //flag渡す用のやつ
     public bool flagjudge()
@@ -82,6 +82,10 @@ public class MouseAction : MonoBehaviour
                 continue;
             }
         }
+        /*if ((buttons.flag2[0] || buttons.flag2[1] || buttons.flag2[2]) == true)
+        {
+           flags = true;
+        }*/
         return flags;
     }
     
@@ -108,7 +112,9 @@ public class MouseAction : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-
+        /*mpos_x = Input.mousePosition.x;
+        mpos_y = Input.mousePosition.y;*/
+        //Debug.Log(mpos_y);
         if (Physics.Raycast(ray,out  hit ,2.5f)){
             Debug.DrawRay(ray.origin, ray.direction * 2.5f, Color.blue, 5, false);
             if(hit.collider.CompareTag("Button"))
@@ -129,6 +135,8 @@ public class MouseAction : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //マウスボタンが押されたら実行
+            /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;*/
             if (Physics.Raycast(ray, out hit,2.5f))
             {
                 if (swichbuttons != null)
@@ -178,27 +186,53 @@ public class MouseAction : MonoBehaviour
                                 //Debug.Log(lsets.oneclick);
                                 buttons.Getnum(h);
                                 checks = buttons.butoonjcheck(h);//Randamで使うためにchcksに結果を入れる
+                                                                 //Debug.Log(checks);
+                                /*if (buttons.button[h] && buttons.flag2[h] == false)
+                                {
+                                    buttons.flag2[h] = true;
+                                    //Debug.Log("good");
+                                }
+                                else if (buttons.button[h] && buttons.flag2[h])
+                                {
+                                    buttons.flag2[h] = true;
+                                }
+                                buttons.enemyLSpot[h].color = Color.red;
+                                buttons.enemyLSpotP[h].color = Color.red;*/
                             }
 
                         }
+                        /*for(int j = 0;  j < swichbuttons.Sbutton.Length; j++)
+                        {
+                            if(hit.collider.gameObject == swichbuttons.Sbutton[j])
+                            {
+                                swichbuttons.SwichGetnum(j);
+                            }
+                        }
+
+                        if(battelys != null)
+                        {
+                            for (int j = 0; j < battelys.Battely.Length; j++)
+                            {
+                                if (hit.collider.gameObject == battelys.Battely[j])
+                                {
+                                    battelys.Get_num(j);
+                                }
+                            }
+                        }*/
                     }
+                    //Buttonflag();
 
 
                     flagjudge();
                    
                 }
                 if (hit.collider.CompareTag("friend"))//Goalタグ付いているオブジェクトにRayが触れたら実行
-
                 {
-
                     //Debug.Log("Clear!");
-
                     boy.isPlayer = true;//Boyと合流した
-
                 }
                 if (hit.collider.CompareTag("Goal"))//Goalタグ付いているオブジェクトにRayが触れたら実行
                 {
-                    //Debug.Log("Clear!");
                     Cl_txt.touch_Goal = true;//クリアtext_パネルを表示する
                 }
             }
@@ -207,7 +241,7 @@ public class MouseAction : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (SceneManager.GetActiveScene().name == "MainScene")
+            if (SceneManager.GetActiveScene().name == "MainGame")
             {
                 //マウスボタンから離れた時に実行
                 for (int i = 0; i < buttons.flag2.Length; i++)
@@ -226,7 +260,7 @@ public class MouseAction : MonoBehaviour
              }*/
         }
 
-        if (SceneManager.GetActiveScene().name == "MainScene")
+        if (SceneManager.GetActiveScene().name == "MainGame")
         {
             if (mremove)
             {
