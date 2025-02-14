@@ -32,6 +32,9 @@ public class Boy : MonoBehaviour
         if (isPlayer == true)
         {
             navMeshAgent.destination = Player.transform.position;
+        }else
+        {
+            navMeshAgent.velocity = Vector3.zero; // ‘¬“x‚ğƒ[ƒ‚É‚·‚é
         }
     }
 
