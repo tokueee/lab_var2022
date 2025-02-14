@@ -18,7 +18,7 @@ public class Clear_text : MonoBehaviour
     [SerializeField] private Boy boy;
 
 
-    [SerializeField]private Pause pause;
+    private Pause pause;
     [System.NonSerialized]public bool touch_Goal=false;
     private float time;
 
@@ -41,8 +41,7 @@ public class Clear_text : MonoBehaviour
             {
                 pause.check_clear = false;
                 pause.PauseOn();
-                Cava_Clear.SetActive(true);
-                if (Input.anyKeyDown) { Next(); Debug.Log("AnyKey"); }
+                Next();
             }
             else
             {
@@ -62,7 +61,7 @@ public class Clear_text : MonoBehaviour
 
     public void Next()
     {
-        UI_SetActive.EndGame();
+        SceneManager.LoadScene("GameClearScene");
         pause.PauseOff();
         pause.check_clear = true;
     }

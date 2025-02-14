@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     Vector3 get_see;
 
     [System.NonSerialized]//public変数をインスペクター上に表示したくない時に使えるやつ
-    public int keyCount;
+    static public int keyCount;
     [System.NonSerialized]
     public bool key_W, key_A, key_S, key_D,key_F, key_Shift;
     float[] global_x = new float[4], global_y = new float[4], global_z = new float[4];//移動制御変数
@@ -61,6 +61,11 @@ public class Player : MonoBehaviour
 
         key_F = false;
         key_Shift = true;
+
+        //for(int i = 0; i < prayer_XYZ.Length; i++)
+        //{
+        //    prayer_XYZ[i] = transform;
+        //}
     }
 
     public bool StartPlane()
@@ -78,39 +83,22 @@ public class Player : MonoBehaviour
             }
             sta = true;
             StartPlane();
-            //Debug.Log(platecount);
         }
         
     }
 
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         get_see = CameraCS.Rot_Camera;
         //各速度の値を毎度初期化
         keyCount = 0;
-        key_W = false; key_A = false; key_S = false; key_D = false; 
+        key_W = false; key_A = false; key_S = false; key_D = false;
         for (int i = 0; i < 4; i++)
         {
             global_x[i] = 0; global_y[i] = 0; global_z[i] = 0;
         }
 
-        //※速度を検出して制御するif文
-        {/*
-            if (rb.velocity.magnitude > SaveSpeed)
-            {
-                mspeed = -8;
-            }
-            else if (rb.velocity.magnitude < SaveSpeed && rb.velocity.magnitude > 0f)
-            {
-                mspeed += SaveSpeed;
-            }
-            else if (rb.velocity.magnitude <= 0f)
-            {
-                mspeed = SaveSpeed;
-            }*/
-        }
 
         //移動
         {
@@ -119,36 +107,24 @@ public class Player : MonoBehaviour
             {
                 keyCount += 1;
                 key_W = true;
-                //rb.AddForce(transform.forward * mspeed);
-                //global_z[1] = mspeed * Mathf.Cos(get_sea.y/180*Mathf.PI);
-                //global_x[1] = mspeed * Mathf.Sin(get_sea.y / 180 * Mathf.PI);
             }
             //後に進む
             if (Input.GetKey(KeyCode.S))
             {
                 keyCount += 1;
                 key_S = true;
-                //rb.AddForce(-transform.forward * mspeed);
-                //global_z[3] = -mspeed * Mathf.Cos(get_sea.y / 180 * Mathf.PI);
-                //global_x[3] = -mspeed * Mathf.Sin(get_sea.y / 180 * Mathf.PI);
             }
             //右に進む
             if (Input.GetKey(KeyCode.D))
             {
                 keyCount += 1;
                 key_D = true;
-                //rb.AddForce(transform.right * mspeed);
-                //global_z[4] = mspeed * Mathf.Cos((get_sea.y+90) / 180 * Mathf.PI);
-                //global_x[4] = mspeed * Mathf.Sin((get_sea.y+90) / 180 * Mathf.PI);
             }
             //左に進む
             if (Input.GetKey(KeyCode.A))
             {
                 keyCount += 1;
                 key_A = true;
-                //rb.AddForce(-transform.right * mspeed);
-                //global_z[2] = -mspeed * Mathf.Cos((get_sea.y + 90) / 180 * Mathf.PI);
-                //global_x[2] = -mspeed * Mathf.Sin((get_sea.y + 90) / 180 * Mathf.PI);
             }
         }
 
@@ -172,6 +148,7 @@ public class Player : MonoBehaviour
 
             }
         }
+
     }
 
     private void Update() 
@@ -270,6 +247,7 @@ public class Player : MonoBehaviour
                 Player_Light.ChageLight();
             }
         }
+
     }
 
     //Player_Lightに移植済み
