@@ -30,6 +30,8 @@ public class MouseAction : MonoBehaviour
     public int[] count;
     //public bool oneclick = false;
 
+    [SerializeField] private Boy boy;
+
     void UseText()
     {
         if(globalsm.GetLanguage() == Global.Language.Eng)
@@ -223,6 +225,11 @@ public class MouseAction : MonoBehaviour
                     flagjudge();
                    
                 }
+                if (hit.collider.CompareTag("friend"))//Goalタグ付いているオブジェクトにRayが触れたら実行
+                {
+                    //Debug.Log("Clear!");
+                    boy.isPlayer = true;//Boyと合流した
+                }
                 if (hit.collider.CompareTag("Goal"))//Goalタグ付いているオブジェクトにRayが触れたら実行
                 {
                     Debug.Log("Clear!");
@@ -233,7 +240,7 @@ public class MouseAction : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (SceneManager.GetActiveScene().name == "MainScene")
+            if (SceneManager.GetActiveScene().name == "MainGame")
             {
                 //マウスボタンから離れた時に実行
                 for (int i = 0; i < buttons.flag2.Length; i++)
@@ -252,7 +259,7 @@ public class MouseAction : MonoBehaviour
              }*/
         }
 
-        if (SceneManager.GetActiveScene().name == "MainScene")
+        if (SceneManager.GetActiveScene().name == "MainGame")
         {
             if (mremove)
             {
