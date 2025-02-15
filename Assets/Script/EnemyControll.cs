@@ -40,15 +40,18 @@ public class EnemyControll : MonoBehaviour
     private float fcdist = 30.0f;
     private float fdists = 40.0f;
 
+    //鈴木：制御用変数
+    private int before;//Patrolの制御
+
 
     // Start is called before the first frame update
     void Start()
     {
         nevMeshAgent = GetComponent<NavMeshAgent>();
-        nevMeshAgent.destination = Goal[destNum].position;
+        nevMeshAgent.destination = Goal[destNum].transform.position;
+        before = destNum;
         noise = Cnoi.GetComponent<CameraNoise>();
         noise.setTrans(0.0f);//透過の初期化
-        //Debug.Log(noise.getTrans());
     }
 
     //距離に応じて返す関数
@@ -91,38 +94,24 @@ public class EnemyControll : MonoBehaviour
         CheckPlayer();
         dis = Vector3.Distance(enemy.transform.position,player.transform.position);
         //プレイヤーと敵の直線距離計算
-        //Debug.Log(dis);
+
         int disnum = DisNum(dis);
-        //Debug.Log(disnum);
+        
         Dtrans(disnum);
-        /*switch (disnum)
-        {
-            //disnumの値に応じて実行する
-            case 0:
-                noise.setTrans(lmax) ;
-                noise.enabled = true; break;
-            case 1:
-                noise.setTrans(lightmin_c) ;
-                noise.enabled = true; break;
-            case 2: 
-                noise.setTrans(lmid) ;
-                noise.enabled = true; break;
-            case 3:
-                noise.setTrans(lmin) ;
-                noise.enabled = true; break;
-            case 4:
-                noise.setTrans(0.0f);
-                noise.enabled = true; break;
-        }*/
-        // Debug.Log(Enemy_Angle);
-        // Debug.Log(Enemy_View);
+        before = destNum;
         if (isChasing == true)
         {
             nevMeshAgent.destination = player.transform.position;
         }
         else
         {
-            if (nevMeshAgent.remainingDistance < 0.5f) { Patrol(); }
+            if (nevMeshAgent.remainingDistance < 0.1f)
+            {
+                if (before == destNum) 
+                {
+                    Patrol();
+                }
+            }
         }
     }
 
@@ -142,9 +131,6 @@ public class EnemyControll : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, DirectionToPlayer, out hit, Enemy_View))
                 {
-                    // Rayが当たった位置をデバッグログに表示
-                    //Debug.Log("Ray hit position: " + hit.point);
-                    //Debug.Log("Hit distance: " + hit.distance); // ヒットした距離を表示
                     if (hit.collider.gameObject == player)
                     {
                         isChasing = true; return;
@@ -156,14 +142,11 @@ public class EnemyControll : MonoBehaviour
     }
     private void Patrol()
     {
-        if (isChasing == false)
+        destNum += 1;
+        if (destNum == Goal.Length)
         {
-            destNum += 1;
-            if (destNum == 4)
-            {
-                destNum = 0;
-            }
-            nevMeshAgent.destination = Goal[destNum].position;
+            destNum = 0;
         }
+        nevMeshAgent.destination = Goal[destNum].transform.position;
     }
 }
