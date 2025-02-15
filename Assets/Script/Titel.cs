@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Titel : MonoBehaviour
 {
     //Titel-Scene の GameSystem にコンポーネントされている
+    [SerializeField] private GameObject TitelCanvas;
     public GameObject came;
     [SerializeField] private GameObject gamesystem;
     [SerializeField] private GameObject controlspanel;

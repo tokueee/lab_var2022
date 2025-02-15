@@ -4902,18 +4902,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &619165215 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3190684707748915768, guid: 83739727c1534524a897a85dbb70b8ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 5716149477263181635}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac72070e2b7cd294a917be78ab64c0e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &628708618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4935,32 +4923,32 @@ PrefabInstance:
     - target: {fileID: 4897907149571462052, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4897907149571462052, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4897907149571462052, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4897907149865922514, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4897907149865922514, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4897907149865922514, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4897907150024988496, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
@@ -5125,7 +5113,7 @@ PrefabInstance:
     - target: {fileID: 4897907150610577670, guid: 26e9e2c7226ee854c8a690e3df007042,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4897907150054088107, guid: 26e9e2c7226ee854c8a690e3df007042, type: 3}
@@ -5177,6 +5165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionCanvas: {fileID: 628708620}
+  check_clear: 1
 --- !u!114 &628708623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5193,6 +5182,8 @@ MonoBehaviour:
   OptionCanvas: {fileID: 628708620}
   poseScript: {fileID: 628708622}
   menucanvas: {fileID: 161740699}
+  canv_tit: {fileID: 0}
+  select: []
 --- !u!1 &647658397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f7739c9181793db46b4f8521c4c48ae6,
@@ -5685,7 +5676,7 @@ MonoBehaviour:
   Use: {fileID: 2143828027}
   UseCanvas: {fileID: 498290143}
   checks: 0
-  count: 0
+  count: 
 --- !u!114 &772343177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16363,9 +16354,9 @@ MonoBehaviour:
   Speed_Walking: 4
   Speed_Running: 8
   flags: 
+  s_object: {fileID: 0}
   pu: 0
   spu: 0
-  doorController: {fileID: 619165215}
 --- !u!4 &2006890389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 347f8a2743d404641bd40265b97048ae,
@@ -16407,6 +16398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cc58dbe4cec6d448e74ab10cef0631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boy: {fileID: 0}
   Light: {fileID: 1866698638}
   Lightbar: {fileID: 1172279689}
   delLtime: 60
