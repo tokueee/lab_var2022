@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEditorInternal;
+
 using UnityEngine;
-using UnityEngine.tvOS;
-using static UnityEditor.PlayerSettings;
+
 
 public class flicker_Light : MonoBehaviour
 {

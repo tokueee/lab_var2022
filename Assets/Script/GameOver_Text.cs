@@ -8,7 +8,7 @@ public class GameOver_Text : MonoBehaviour
 {
     //GameOverScene
     //Load‚·‚éƒV[ƒ“‚Ì–¼‘Oİ’è
-    private string retry = "LightSampleScene";
+    private string retry = "MainGame";
     private string title = "TitelScene";
 
     [SerializeField] private Text GameoverText;
